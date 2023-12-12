@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">Fashion Zone</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_app">Welcome to Fashion Zone</string>
+    <string name="wait">Please Wait…</string>
+    <string name="hello">Hello</string>
+    <string name="signup">Sign Up</string>
+    <string name="login">Sign In</string>
+    <string name="add_to_card">Add To Card</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="asking">Don\'t Have An Account?</string>
+    <string name="confirm">Already Have An Account?</string>
+    <string name="click_here">Click Here</string>
+    <string name="please_enter_username">Please Enter Username*</string>
+    <string name="fill_data">Please Enter Require Data*</string>
+    <string name="please_enter_email">Please Enter Email*</string>
+    <string name="please_enter_password">Please Enter Password*</string>
+    <string name="password_requirements">Password should be more than 8 numbers</string>
+    <string name="first_slide">Choose Your Products</string>
+    <string name="second_slide">Fast Delivery…</string>
+    <string name="third_slide">Good Services</string>
+    <string name="description">We are used to digital payment. Design faster using our carefully selected free E-Commerce Logo Kit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="category">Category</string>
+    <string name="see_all">See All</string>
+    <string name="see_all_products">See All Products</string>
+    <string name="new_products">New Products</string>
+    <string name="we_provide_best_products">We provide best products.</string>
+    <string name="popular_products">Popular Products</string>
+    <string name="category_name">Category Name</string>
+    <string name="new_item">NEW 🔥</string>
+    <string name="order">#1</string>
+    <string name="product_name">Product Name</string>
+    <string name="_90">90</string>
+    <string name="price">Price: $</string>
+    <string name="dollar_sign">$</string>
+    <string name="lorem">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</string>
+    <string name="_9_99">9.99</string>
+    <string name="_0_0">0.0</string>
+    <string name="_4_5">4.5</string>
+    <string name="category_of">Category of</string>
+    <string name="all">All</string>
+    <string name="home">Home</string>
+    <string name="cart">My Cart</string>
+    <string name="profile">Profile</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="log_out">Log Out</string>
+    <string name="terms">\nWelcome to Fashion Zone!\nThese terms and conditions outline the rules and regulations for the use of Fashion Zone, located at mohamed.amin.2290@gmail.com.\n
+        \nLicense\nUnless otherwise stated, Company Name and/or its licensors own the intellectual property rights for all material on Website Name. All intellectual property rights are reserved.
+        You may access this from Website Name for your own personal use subjected to restrictions set in these terms and conditions.\n
+        \niFrames\nWithout prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.</string>
+    <string name="total_price">Total Price:</string>
+    <string name="date">12/ 4/ 2023</string>
+    <string name="your_address">Your Addresses</string>
+    <string name="continue_to_payment">Continue to payment</string>
+    <string name="add_address">Add Address</string>
+    <string name="get_location">Get Location</string>
+    <string name="confirm_location">Confirm Location</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="add_new_item">Add New Item</string>
+    <string name="add_new_product">Add New Product</string>
+    <string name="admin_modification">Admin Modification</string>
+    <string name="product_rate">Product Rate</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_description">Product Description</string>
+    <string name="upload_new_image">Upload New Image</string>
+    <string name="enter_payment_rate">Rate this Payment</string>
+    <string name="payments_history">Payments History</string>
+
+    <string-array name="products_types">
+        <item>socks</item>
+        <item>watch</item>
+        <item>shirts</item>
+        <item>glass</item>
+        <item>pants</item>
+        <item>tshirt</item>
+        <item>shoes</item>
+    </string-array>
+</resources>

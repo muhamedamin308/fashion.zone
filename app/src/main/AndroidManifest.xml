@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:backupInForeground="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_fashion_zone"
+        android:label="@string/app_name"
+        android:roundIcon="@color/ic_fashion_zone_background"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ECommerceApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".general.UserHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".general.UsersFeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.activities.AdminAddNewProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.activities.AdminModificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".products.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".address.AddAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".address.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".general.TermsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".products.ShowAllActivity"
+            android:exported="false" />
+        <activity
+            android:name=".products.DetailedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.OnBoardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.RegistrationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".start.MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

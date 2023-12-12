@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/address_bg">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/all_product_img"
+            android:layout_marginTop="7dp"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/mobile_select_items"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/all_product_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/g_orange_yellow"
+            android:fontFamily="@font/nunito_black"
+            android:padding="6dp"
+            android:text="@string/order"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintVertical_bias="0.03"
+            app:layout_constraintBottom_toBottomOf="@+id/all_product_img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/all_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/product_name"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/all_product_img" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/all_product_name"
+            app:layout_constraintStart_toStartOf="@id/all_product_name"
+            app:layout_constraintTop_toBottomOf="@id/all_product_name">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                app:layout_constraintHorizontal_bias="0"
+                android:textStyle="bold"
+                android:id="@+id/dollar"
+                android:text="@string/price"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                app:layout_constraintHorizontal_bias="0"
+                android:textStyle="bold"
+                android:id="@+id/all_product_price"
+                android:text="@string/_90"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/dollar"
+                app:layout_constraintStart_toEndOf="@id/dollar"
+                app:layout_constraintTop_toTopOf="@id/dollar" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".admin.activities.AdminModificationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/top_admin_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/detailed_top_bg"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/exit"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:padding="10dp"
+                    android:src="@drawable/baseline_clear_24"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/new_item_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_black"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:text="@string/admin_modification"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/exit"
+                    app:layout_constraintStart_toEndOf="@id/exit"
+                    app:layout_constraintTop_toTopOf="@id/exit"
+                    tools:layout_editor_absoluteX="54dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_admin_activity">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/new_products"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/add_new_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="end"
+                android:text="@string/add_new_item"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/admin_item"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_admin_activity">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/popular_products"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/add_new_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="end"
+                android:text="@string/add_new_item"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_popular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/admin_item"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_admin_activity">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/see_all_products"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/add_new_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/nunito_regular"
+                android:gravity="end"
+                android:text="@string/add_new_item"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_show_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/admin_item"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_bg"
+    tools:context=".fragments.HomeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/adminModification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:clickable="true"
+            android:src="@drawable/baseline_add_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.97"
+            app:layout_constraintVertical_bias="0.97"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/home_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_period="1000" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/category"
+                    android:textColor="@color/white"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/category_see_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_regular"
+                    android:gravity="end"
+                    android:text="@string/see_all"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_category"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/category_list"
+                tools:itemCount="1"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:elevation="6dp"
+                app:cardCornerRadius="5dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/app_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/new_product_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="9dp"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="@string/new_products"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:fontFamily="@font/nunito_black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/new_product_name"
+                            android:layout_marginStart="9dp"
+                            android:text="@string/we_provide_best_products"
+                            android:textColor="@color/green"/>
+
+                        <TextView
+                            android:id="@+id/newProducts_see_all"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:gravity="end"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="@string/see_all"
+                            android:textColor="@color/green"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/new_product_rec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="7dp"
+                        android:layout_marginTop="6dp"
+                        tools:listitem="@layout/new_products"
+                        tools:itemCount="1"
+                        android:padding="5dp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/popular_products"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="@string/popular_products"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/popular_products"
+                        android:layout_marginStart="9dp"
+                        android:fontFamily="@font/nunito_black"
+                        android:text="@string/we_provide_best_products"
+                        android:textColor="@color/green" />
+
+                    <TextView
+                        android:id="@+id/popular_see_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="8dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="See All"
+                        android:textColor="@color/green"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_rec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="7dp"
+                    android:layout_marginTop="6dp"
+                    android:padding="5dp"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/popular_items" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

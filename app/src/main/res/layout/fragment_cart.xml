@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".fragments.CartFragment">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/empty_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/total_price">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:alpha="0.6"
+            android:src="@drawable/green_empty_shopping"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Fashion cart is empty"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/imageView"
+            app:layout_constraintEnd_toEndOf="@id/imageView"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/g_gray900"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="20sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/cart_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/total_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_cart_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/my_cart_list_item" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@id/total_price"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/total_price_bg"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/final_buy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="757dp">
+
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/total_price"
+            android:textColor="@color/g_gray500"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"/>
+
+
+        <TextView
+            android:id="@+id/my_cart_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:text="@string/_0_0"
+            android:textColor="@color/g_gray500"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/final_buy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/buy_now"
+        android:textAllCaps="false"
+        android:textColor="@color/app_bg"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

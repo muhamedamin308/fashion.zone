@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_bg">
+
+
+            <RatingBar
+                android:id="@+id/progressDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/item_bg"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/green_dark"
+                android:stepSize="0.5"
+                android:layout_marginHorizontal="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.188" />
+
+            <TextView
+                android:id="@+id/title_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:text="@string/enter_payment_rate"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/progressDialog"
+                app:layout_constraintStart_toStartOf="@+id/progressDialog"
+                app:layout_constraintTop_toBottomOf="@+id/progressDialog" />
+
+
+
+            <TextView
+                android:id="@+id/rating_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular"
+                android:text="0"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintEnd_toEndOf="@+id/title_progress"
+                app:layout_constraintStart_toStartOf="@+id/title_progress"
+                app:layout_constraintTop_toBottomOf="@+id/title_progress"
+                app:drawableEndCompat="@drawable/baseline_star_rate_24" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitRating"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/rounded_background"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/nunito_semibold"
+                android:paddingHorizontal="26sp"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rating_number" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
