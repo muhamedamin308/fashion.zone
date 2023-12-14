@@ -2,6 +2,7 @@ package com.example.e_commerceapplication.start;
 
 import static com.example.e_commerceapplication.general.Constants.ADMIN_MODE;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.ContextMenu;
@@ -14,9 +15,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.e_commerceapplication.R;
+import com.example.e_commerceapplication.databinding.ActivityMainBinding;
 import com.example.e_commerceapplication.fragments.CartFragment;
 import com.example.e_commerceapplication.fragments.HomeFragment;
 import com.example.e_commerceapplication.fragments.ProfileFragment;
+import com.example.e_commerceapplication.products.SearchActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -25,58 +28,60 @@ public class MainActivity extends AppCompatActivity {
     Fragment homeFragment;
     Fragment profileFragment;
     Fragment cartFragment;
-    BottomNavigationView bottomNavigationAdmin;
-    BottomNavigationView bottomNavigationUser;
+    ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         homeFragment = new HomeFragment();
         profileFragment = new ProfileFragment();
         cartFragment = new CartFragment();
+
         loadFragment(homeFragment);
-        TextView pageTitle = findViewById(R.id.page_title);
-        pageTitle.setText(R.string.home);
-        bottomNavigationUser = findViewById(R.id.bottomNav);
-        bottomNavigationAdmin = findViewById(R.id.bottomNavAdmin);
+
+        binding.searchProducts.setOnClickListener(v -> startActivity(new Intent(this, SearchActivity.class)));
+
+
+        binding.pageTitle.setText(R.string.home);
 
 
         if (ADMIN_MODE) {
-            bottomNavigationAdmin.setVisibility(View.VISIBLE);
-            bottomNavigationUser.setVisibility(View.GONE);
-            bottomNavigationAdmin.setOnItemSelectedListener(item -> {
+            binding.bottomNavAdmin.setVisibility(View.VISIBLE);
+            binding.bottomNav.setVisibility(View.GONE);
+            binding.bottomNavAdmin.setOnItemSelectedListener(item -> {
                 if (item.getItemId() == R.id.home_page){
                     loadFragment(homeFragment);
-                    pageTitle.setText(R.string.home);
+                    binding.pageTitle.setText(R.string.home);
                 }
                 else {
                     loadFragment(profileFragment);
-                    pageTitle.setText(R.string.profile);
+                    binding.pageTitle.setText(R.string.profile);
                 }
                 return true;
             });
         } else {
-            bottomNavigationAdmin.setVisibility(View.GONE);
-            bottomNavigationUser.setVisibility(View.VISIBLE);
-            bottomNavigationUser.setOnItemSelectedListener(item -> {
+            binding.bottomNavAdmin.setVisibility(View.GONE);
+            binding.bottomNav.setVisibility(View.VISIBLE);
+            binding.bottomNav.setOnItemSelectedListener(item -> {
                 if (item.getItemId() == R.id.home_page){
                     loadFragment(homeFragment);
-                    pageTitle.setText(R.string.home);
+                    binding.pageTitle.setText(R.string.home);
                 }
                 else if (item.getItemId() == R.id.cart_page){
                     loadFragment(cartFragment);
-                    pageTitle.setText(R.string.cart);
+                    binding.pageTitle.setText(R.string.cart);
                 }
                 else {
                     loadFragment(profileFragment);
-                    pageTitle.setText(R.string.profile);
+                    binding.pageTitle.setText(R.string.profile);
                 }
                 return true;
             });
         }
 
     }
-
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();

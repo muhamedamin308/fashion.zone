@@ -242,6 +242,8 @@ public class DataLayer {
             .addOnCompleteListener(task -> {
                 if (collection.equals(ADD_TO_CART)) {
                     Toast.makeText(activity, ADD_TO_CART_SUCCESSFUL, Toast.LENGTH_SHORT).show();
+                    activity.startActivity(new Intent(activity, MainActivity.class));
+                    activity.finish();
                 } else {
                     Toast.makeText(activity, PAYMENT_SUCCESSFUL, Toast.LENGTH_SHORT).show();
                 }
@@ -336,6 +338,15 @@ public class DataLayer {
                 .document(Objects.requireNonNull(getAuth().getCurrentUser()).getUid())
                 .collection(USER)
                 .add(cartMap));
+        Toast.makeText(activity, PAYMENT_SUCCESSFUL, Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void buyCartData(HashMap<String, Object> paymentMapList, Activity activity) {
+        getFireStore().collection(USER_PAYMENTS)
+                .document(Objects.requireNonNull(getAuth().getCurrentUser()).getUid())
+                .collection(USER)
+                .add(paymentMapList);
         Toast.makeText(activity, PAYMENT_SUCCESSFUL, Toast.LENGTH_SHORT).show();
     }
 

@@ -9,9 +9,6 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.e_commerceapplication.R;
+import com.example.e_commerceapplication.databinding.ActivityAddAddressBinding;
 import com.example.e_commerceapplication.general.Constants;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -33,29 +30,23 @@ import java.util.Locale;
 public class AddAddressActivity extends AppCompatActivity {
 
     FusedLocationProviderClient client;
-    TextView address, city, country;
-    Button getLocation, confirmLocation;
     String addressLocation, cityLocation, countyLocation;
     private DataLayer dataLayer;
-
+    ActivityAddAddressBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_address);
-        address = findViewById(R.id.address);
-        city = findViewById(R.id.city);
-        country = findViewById(R.id.country);
-        getLocation = findViewById(R.id.getLocation);
-        confirmLocation = findViewById(R.id.confirmLocation);
-        ImageView exit = findViewById(R.id.exit);
+        binding = ActivityAddAddressBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         dataLayer = new DataLayer(USERS);
         client = LocationServices.getFusedLocationProviderClient(AddAddressActivity.this);
-        getLocation.setOnClickListener(v -> {
+        binding.getLocation.setOnClickListener(v -> {
             getLastLocation();
-            confirmLocation.setVisibility(View.VISIBLE);
+            binding.confirmLocation.setVisibility(View.VISIBLE);
         });
 
-        confirmLocation.setOnClickListener(v -> {
+        binding.confirmLocation.setOnClickListener(v -> {
             if (!(addressLocation.isEmpty() || cityLocation.isEmpty() || countyLocation.isEmpty())) {
                 HashMap<String, Object> addressMap = new HashMap<>();
                 addressMap.put("address", addressLocation);
@@ -64,7 +55,8 @@ public class AddAddressActivity extends AppCompatActivity {
                 dataLayer.addAddressDatabase(addressMap, AddAddressActivity.this);
             }
         });
-        exit.setOnClickListener(v -> finish());
+
+        binding.exit.setOnClickListener(v -> finish());
     }
 
     @SuppressLint("SetTextI18n")
@@ -83,11 +75,11 @@ public class AddAddressActivity extends AppCompatActivity {
                             }
                             assert addresses != null;
                             addressLocation = addresses.get(0).getAddressLine(0);
-                            address.setText("Address: " + addressLocation);
+                            binding.address.setText("Address: " + addressLocation);
                             cityLocation = addresses.get(0).getLocality();
-                            city.setText("city: " + cityLocation);
+                            binding.city.setText("city: " + cityLocation);
                             countyLocation = addresses.get(0).getCountryName();
-                            country.setText("Country: " + countyLocation);
+                            binding.country.setText("Country: " + countyLocation);
                         }
                     });
         } else {

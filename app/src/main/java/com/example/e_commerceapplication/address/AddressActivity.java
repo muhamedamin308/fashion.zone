@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.adapter.AddressAdapter;
+import com.example.e_commerceapplication.databinding.ActivityAddressBinding;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.address.AddressModel;
 import com.example.e_commerceapplication.models.product.NewProductsModel;
@@ -31,21 +32,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddressActivity extends AppCompatActivity implements AddressAdapter.SelectedAddress {
-    Button addNewAddress, continueToPayment;
-    ImageView exit;
-    RecyclerView recyclerView;
     private List<AddressModel> list;
     String address = "";
     private DataLayer dataLayer;
     private Product mainProduct;
 
+    ActivityAddressBinding binding;
     @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_address);
+        binding = ActivityAddressBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         dataLayer = new DataLayer(USERS);
-        exit = findViewById(R.id.exit);
+
         Object object = getIntent().getSerializableExtra("item");
         int totalQuantity = getIntent().getIntExtra("quantity", 1);
         Serializable serializableExtra = getIntent().getSerializableExtra("listOfCart");
@@ -58,19 +59,17 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
         else if (object instanceof ShowAllModel)
             mainProduct = (ShowAllModel) object;
 
-        addNewAddress = findViewById(R.id.add_address_btn);
-        continueToPayment = findViewById(R.id.payment_btn);
-        recyclerView = findViewById(R.id.address_recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.addressRecycler.setLayoutManager(new LinearLayoutManager(this));
+
         list = new ArrayList<>();
         AddressAdapter adapter = new AddressAdapter(list, this);
-        recyclerView.setAdapter(adapter);
+        binding.addressRecycler.setAdapter(adapter);
 
         dataLayer.getAddressDatabase(list, adapter);
 
-        addNewAddress.setOnClickListener(v -> startActivity(new Intent(this, AddAddressActivity.class)));
+        binding.addAddressBtn.setOnClickListener(v -> startActivity(new Intent(this, AddAddressActivity.class)));
 
-        continueToPayment.setOnClickListener(v -> {
+        binding.paymentBtn.setOnClickListener(v -> {
             if (isAddressSelected) {
                 double amount = 0.0;
                 double shipping = 0.0;
@@ -111,9 +110,9 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
                 AddressModel removerAddress = list.get(position);
                 dataLayer.removeAddressDatabase(AddressActivity.this, list, removerAddress);
             }
-        }).attachToRecyclerView(recyclerView);
+        }).attachToRecyclerView(binding.addressRecycler);
 
-        exit.setOnClickListener(v -> finish());
+        binding.exit.setOnClickListener(v -> finish());
     }
 
     @Override

@@ -13,21 +13,24 @@ import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
 import com.anychart.charts.Pie;
 import com.example.e_commerceapplication.R;
+import com.example.e_commerceapplication.databinding.ActivityUsersFeedbackBinding;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.users.User;
 
 import java.util.ArrayList;
 
 public class UsersFeedbackActivity extends AppCompatActivity {
-    AnyChartView anyChartView;
+    ActivityUsersFeedbackBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_users_feedback);
-        anyChartView = findViewById(R.id.userData);
+        binding = ActivityUsersFeedbackBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         setUpChart();
+
+        binding.exit.setOnClickListener(v -> finish());
     }
 
     private void setUpChart() {
@@ -42,7 +45,7 @@ public class UsersFeedbackActivity extends AppCompatActivity {
                     dataEntries.add(new ValueDataEntry(s.getUsername(), s.getPaymentRate() * 10));
                 });
                 pie.data(dataEntries);
-                anyChartView.setChart(pie);
+                binding.userData.setChart(pie);
             });
     }
 }

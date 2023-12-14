@@ -72,6 +72,10 @@
     <string name="upload_new_image">Upload New Image</string>
     <string name="enter_payment_rate">Rate this Payment</string>
     <string name="payments_history">Payments History</string>
+    <string name="total_payment">Total Payment:</string>
+    <string name="User_name">C.C. Holder Name:</string>
+    <string name="users_payments_history">Users Payments History</string>
+    <string name="original_polo">Original Polo</string>
 
     <string-array name="products_types">
         <item>socks</item>

@@ -8,33 +8,27 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.e_commerceapplication.R;
+import com.example.e_commerceapplication.databinding.ActivityRegistrationBinding;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.users.User;
 import com.example.e_commerceapplication.start.MainActivity;
 import com.example.e_commerceapplication.start.OnBoardingActivity;
 
 public class RegistrationActivity extends AppCompatActivity {
-
-    EditText name, email, password;
     SharedPreferences sharedPreferences;
     DataLayer dataLayer;
+    ActivityRegistrationBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        binding = ActivityRegistrationBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        name = findViewById(R.id.username);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        Button signUp = findViewById(R.id.add_new_product_btn);
         dataLayer = new DataLayer(USERS);
 
         if (ADMIN_MODE) {
@@ -58,37 +52,34 @@ public class RegistrationActivity extends AppCompatActivity {
             finish();
         }
 
-        signUp.setOnClickListener(v -> {
-            signUp();
-        });
+        binding.signUpUser.setOnClickListener(v -> signUp());
     }
 
     public void signUp() {
         String username, userEmail, userPassword;
-        TextView errorUsername = findViewById(R.id.errorUsername);
-        errorUsername.setVisibility(View.INVISIBLE);
-        TextView errorUserEmail = findViewById(R.id.errorEmail);
-        errorUserEmail.setVisibility(View.INVISIBLE);
-        TextView errorUserPassword = findViewById(R.id.errorPassword);
-        errorUserPassword.setVisibility(View.INVISIBLE);
-        errorUserPassword.setText(R.string.please_enter_password);
-        username = name.getText().toString();
-        userEmail = email.getText().toString();
-        userPassword = password.getText().toString();
+
+        binding.errorUsername.setVisibility(View.INVISIBLE);
+        binding.errorEmail.setVisibility(View.INVISIBLE);
+        binding.errorPassword.setVisibility(View.INVISIBLE);
+        binding.errorPassword.setText(R.string.please_enter_password);
+
+        username = binding.username.getText().toString();
+        userEmail = binding.email.getText().toString();
+        userPassword = binding.password.getText().toString();
 
         if (TextUtils.isEmpty(username)) {
-            errorUsername.setVisibility(View.VISIBLE);
+            binding.errorUsername.setVisibility(View.VISIBLE);
             return;
         } else if (TextUtils.isEmpty(userEmail)) {
-            errorUserEmail.setVisibility(View.VISIBLE);
+            binding.errorEmail.setVisibility(View.VISIBLE);
             return;
         } else if (TextUtils.isEmpty(userPassword)) {
-            errorUserPassword.setVisibility(View.VISIBLE);
+            binding.errorPassword.setVisibility(View.VISIBLE);
             return;
         }
         if (userPassword.length() < 8) {
-            errorUserPassword.setVisibility(View.VISIBLE);
-            errorUserPassword.setText(R.string.password_requirements);
+            binding.errorPassword.setVisibility(View.VISIBLE);
+            binding.errorPassword.setText(R.string.password_requirements);
             return;
         }
         User user = new User(username, userEmail, userPassword, 0.0);

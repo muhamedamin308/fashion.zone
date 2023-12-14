@@ -16,47 +16,46 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.e_commerceapplication.R;
+import com.example.e_commerceapplication.databinding.ActivityLoginBinding;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.users.Admin;
 import com.example.e_commerceapplication.start.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
-
-    EditText email, password;
     DataLayer dataLayer;
+    ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        Button signIn = findViewById(R.id.signin);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         dataLayer = new DataLayer(USERS);
 
-        signIn.setOnClickListener(v -> signIn());
+        binding.signin.setOnClickListener(v -> signIn());
     }
 
     public void signIn() {
         String userEmail, userPassword;
-        TextView errorUserEmail = findViewById(R.id.errorEmail);
-        errorUserEmail.setVisibility(View.INVISIBLE);
-        TextView errorUserPassword = findViewById(R.id.errorPassword);
-        errorUserPassword.setText(R.string.please_enter_password);
-        errorUserPassword.setVisibility(View.INVISIBLE);
-        userEmail = email.getText().toString();
-        userPassword = password.getText().toString();
+
+        binding.errorEmail.setVisibility(View.INVISIBLE);
+        binding.errorPassword.setText(R.string.please_enter_password);
+        binding.errorPassword.setVisibility(View.INVISIBLE);
+
+        userEmail = binding.email.getText().toString();
+        userPassword = binding.password.getText().toString();
 
         if (TextUtils.isEmpty(userEmail)) {
-            errorUserEmail.setVisibility(View.VISIBLE);
+            binding.errorEmail.setVisibility(View.VISIBLE);
             return;
         } else if (TextUtils.isEmpty(userPassword)) {
-            errorUserPassword.setVisibility(View.VISIBLE);
+            binding.errorPassword.setVisibility(View.VISIBLE);
             return;
         }
         if (userPassword.length() < 8) {
-            errorUserPassword.setVisibility(View.VISIBLE);
-            errorUserPassword.setText(R.string.password_requirements);
+            binding.errorPassword.setVisibility(View.VISIBLE);
+            binding.errorPassword.setText(R.string.password_requirements);
             return;
         }
         if (userEmail.equals(adminEmail) && userPassword.equals(adminPassword)) {

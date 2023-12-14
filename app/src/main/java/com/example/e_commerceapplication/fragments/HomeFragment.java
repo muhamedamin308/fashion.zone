@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,7 @@ import com.example.e_commerceapplication.adapter.CategoryAdapter;
 import com.example.e_commerceapplication.adapter.NewProductsAdapter;
 import com.example.e_commerceapplication.adapter.PopularProductsAdapter;
 import com.example.e_commerceapplication.admin.activities.AdminModificationActivity;
+import com.example.e_commerceapplication.databinding.FragmentHomeBinding;
 import com.example.e_commerceapplication.general.Constants;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.product.CategoryModel;
@@ -50,11 +52,9 @@ public class HomeFragment extends Fragment {
     PopularProductsAdapter popularProductsAdapter;
     List<PopularProductsModel> popularProductsModelList;
 
-    //Organizing
-    RecyclerView categoryRecyclerView, newProductRecyclerView, popularProductsRecyclerView;
-    LinearLayout linearLayout;
-    TextView seeAllCategories, seeAllNewProducts, seeAllPopularProducts;
+    //Data
     DataLayer dataLayer;
+    FragmentHomeBinding homeBinding;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -62,74 +62,64 @@ public class HomeFragment extends Fragment {
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        homeBinding = FragmentHomeBinding.inflate(inflater);
+//        View view = inflater.inflate(R.layout.fragment_home, container, false);
         dataLayer = new DataLayer(USERS);
 
         //Initializing Variables
-        categoryRecyclerView = view.findViewById(R.id.rec_category);
-        newProductRecyclerView = view.findViewById(R.id.new_product_rec);
-        popularProductsRecyclerView = view.findViewById(R.id.popular_rec);
+
         Constants.loadingDialogBar = new LoadingDialogBar(getContext());
-        linearLayout = view.findViewById(R.id.home_layout);
-        linearLayout.setVisibility(View.GONE);
-        seeAllCategories = view.findViewById(R.id.category_see_all);
-        seeAllNewProducts = view.findViewById(R.id.newProducts_see_all);
-        seeAllPopularProducts = view.findViewById(R.id.popular_see_all);
+        homeBinding.homeLayout.setVisibility(View.GONE);
+
 
 
         //Image Slider Drawing
-        ImageSlider imageSlider = view.findViewById(R.id.image_slider);
         List<SlideModel> slideModelList = new ArrayList<>();
         slideModelList.add(new SlideModel(R.drawable.shopping_bags1, "Discount", ScaleTypes.CENTER_INSIDE));
         slideModelList.add(new SlideModel(R.drawable.shopping_bags2, "Perfume", ScaleTypes.CENTER_INSIDE));
         slideModelList.add(new SlideModel(R.drawable.mobile_select_items, "Charts Mas", ScaleTypes.CENTER_INSIDE));
-        imageSlider.setImageList(slideModelList);
+        homeBinding.imageSlider.setImageList(slideModelList);
 
         //Loading Dialog Processing
         Constants.loadingDialogBar.showDialog();
 
         //See All Events
-        seeAllCategories.setOnClickListener(v -> startActivity(new Intent(getContext(), ShowAllActivity.class)));
-        seeAllNewProducts.setOnClickListener(v -> startActivity(new Intent(getContext(), ShowAllActivity.class)));
-        seeAllPopularProducts.setOnClickListener(v -> startActivity(new Intent(getContext(), ShowAllActivity.class)));
-
+        homeBinding.categorySeeAll.setOnClickListener(v -> startActivity(new Intent(getContext(), ShowAllActivity.class)));
+        homeBinding.newProductsSeeAll.setOnClickListener(v -> startActivity(new Intent(getContext(), ShowAllActivity.class)));
+        homeBinding.popularSeeAll.setOnClickListener(v -> startActivity(new Intent(getContext(), ShowAllActivity.class)));
 
         //Category
-        categoryRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        homeBinding.recCategory.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         categoryModels = new ArrayList<>();
         categoryAdapter = new CategoryAdapter(getContext(), categoryModels);
-        categoryRecyclerView.setAdapter(categoryAdapter);
-        dataLayer.categoryDatabase(categoryModels, categoryAdapter,this, linearLayout);
+        homeBinding.recCategory.setAdapter(categoryAdapter);
+        dataLayer.categoryDatabase(categoryModels, categoryAdapter,this, homeBinding.homeLayout);
 
 
         //New Product
-        newProductRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        homeBinding.newProductRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         newProductsModelList = new ArrayList<>();
         newProductsAdapter = new NewProductsAdapter(newProductsModelList, getContext());
-        newProductRecyclerView.setAdapter(newProductsAdapter);
+        homeBinding.newProductRec.setAdapter(newProductsAdapter);
         dataLayer.newProductsDatabase(newProductsModelList, newProductsAdapter,this);
 
 
         //Popular Product
-        popularProductsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        homeBinding.popularRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         popularProductsModelList = new ArrayList<>();
         popularProductsAdapter = new PopularProductsAdapter(getContext(), popularProductsModelList);
-        popularProductsRecyclerView.setAdapter(popularProductsAdapter);
+        homeBinding.popularRec.setAdapter(popularProductsAdapter);
         dataLayer.popularProductsDatabase(popularProductsModelList, popularProductsAdapter, this);
-
 
         //Admin Mode
         if (ADMIN_MODE) {
-           FloatingActionButton adminModification = view.findViewById(R.id.adminModification);
-           adminModification.setVisibility(View.VISIBLE);
-           adminModification.setOnClickListener(v -> {
-               startActivity(new Intent(getContext(), AdminModificationActivity.class));
-           });
+           homeBinding.adminModification.setVisibility(View.VISIBLE);
+           homeBinding.adminModification.setOnClickListener(v -> startActivity(new Intent(getContext(), AdminModificationActivity.class)));
         }
-        return view;
+        return homeBinding.getRoot();
     }
 }

@@ -4,6 +4,7 @@ import static com.example.e_commerceapplication.general.Constants.ADD_TO_CART;
 import static com.example.e_commerceapplication.general.Constants.ADMIN_MODE;
 import static com.example.e_commerceapplication.general.Constants.USERS;
 import static com.example.e_commerceapplication.general.Constants.categories;
+import static com.example.e_commerceapplication.general.Constants.isAddressSelected;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -48,6 +49,8 @@ public class DetailedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detailed);
 
         dataLayer = new DataLayer(USERS);
+
+        isAddressSelected = false;
 
         final Object object = getIntent().getSerializableExtra("detailed");
 

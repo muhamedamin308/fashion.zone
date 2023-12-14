@@ -51,7 +51,7 @@ public class AdminPopularProductsAdapter extends RecyclerView.Adapter<AdminPopul
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             productImage = itemView.findViewById(R.id.product_image);
-            productName = itemView.findViewById(R.id.product_name);
+            productName = itemView.findViewById(R.id.cc_holder_name);
             productPrice = itemView.findViewById(R.id.all_product_price);
         }
     }

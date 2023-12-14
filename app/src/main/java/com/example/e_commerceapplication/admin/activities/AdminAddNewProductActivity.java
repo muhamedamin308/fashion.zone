@@ -117,6 +117,8 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
                 Toast.makeText(this, "Please Select Image For Your New Product", Toast.LENGTH_SHORT).show();
             }
         });
+
+        binding.exit.setOnClickListener(v -> finish());
     }
 
     private void uploadFirebase(String name, String rate, String price, String description, String type, Uri image) {

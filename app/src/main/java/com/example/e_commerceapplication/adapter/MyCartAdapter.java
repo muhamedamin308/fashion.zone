@@ -50,9 +50,9 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             productImage = itemView.findViewById(R.id.product_image);
-            productName = itemView.findViewById(R.id.product_name);
+            productName = itemView.findViewById(R.id.cc_holder_name);
             productPrice = itemView.findViewById(R.id.all_product_price);
-            productDate = itemView.findViewById(R.id.product_date);
+            productDate = itemView.findViewById(R.id.credit_holder_name);
             totalQuantity = itemView.findViewById(R.id.product_counter);
         }
     }

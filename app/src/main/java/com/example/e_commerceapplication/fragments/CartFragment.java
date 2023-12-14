@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.adapter.MyCartAdapter;
 import com.example.e_commerceapplication.address.AddressActivity;
+import com.example.e_commerceapplication.databinding.FragmentCartBinding;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.product.MyCartModel;
 
@@ -31,14 +31,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CartFragment extends Fragment {
-
-    RecyclerView recyclerView;
     List<MyCartModel> list;
     MyCartAdapter adapter;
-    TextView totalPrice;
-    Button finalBuy;
     DataLayer dataLayer;
-    View layout, empty;
+
+    FragmentCartBinding binding;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,25 +43,20 @@ public class CartFragment extends Fragment {
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_cart, container, false);
+        binding = FragmentCartBinding.inflate(inflater);
+//        View view = inflater.inflate(R.layout.fragment_cart, container, false);
         dataLayer = new DataLayer(USERS);
 
-        totalPrice = view.findViewById(R.id.my_cart_total_price);
-        finalBuy = view.findViewById(R.id.final_buy);
-        recyclerView = view.findViewById(R.id.my_cart_rec);
-        layout = view.findViewById(R.id.cart_layout);
-        empty = view.findViewById(R.id.empty_cart);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.historyRec.setLayoutManager(new LinearLayoutManager(getActivity()));
         list = new ArrayList<>();
         adapter = new MyCartAdapter(getContext(), list);
-        recyclerView.setAdapter(adapter);
+        binding.historyRec.setAdapter(adapter);
 
 
-        dataLayer.cartDatabase(ADD_TO_CART, USER, adapter, list, totalPrice, layout, empty);
+        dataLayer.cartDatabase(ADD_TO_CART, USER, adapter, list, binding.myCartTotalPrice, binding.cartLayout, binding.emptyCart);
 
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
@@ -81,13 +73,13 @@ public class CartFragment extends Fragment {
                 dataLayer.removeCartDatabase(ADD_TO_CART,
                         USER,
                         list,
-                        totalPrice,
+                        binding.myCartTotalPrice,
                         removeCart,
                         CartFragment.this);
             }
-        }).attachToRecyclerView(recyclerView);
+        }).attachToRecyclerView(binding.historyRec);
 
-        finalBuy.setOnClickListener(v -> {
+        binding.finalBuy.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), AddressActivity.class);
             double finalPaymentAmount = 0.0;
             for (MyCartModel model : list) finalPaymentAmount += model.getTotalPrice();
@@ -96,6 +88,6 @@ public class CartFragment extends Fragment {
             intent.putExtra("quantity", list.size());
             startActivity(intent);
         });
-        return view;
+        return binding.getRoot();
     }
 }

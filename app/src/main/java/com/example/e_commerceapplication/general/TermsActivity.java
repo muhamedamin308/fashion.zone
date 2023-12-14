@@ -6,14 +6,16 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.e_commerceapplication.R;
+import com.example.e_commerceapplication.databinding.ActivityTermsBinding;
 
 public class TermsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terms);
-        ImageView exit = findViewById(R.id.exit);
-        exit.setOnClickListener(view -> finish());
+        ActivityTermsBinding binding = ActivityTermsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.exit.setOnClickListener(view -> finish());
     }
 }

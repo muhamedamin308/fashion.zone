@@ -8,61 +8,54 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.appcompat.widget.AppCompatButton;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.auth.RegistrationActivity;
+import com.example.e_commerceapplication.databinding.FragmentProfileBinding;
 import com.example.e_commerceapplication.general.TermsActivity;
 import com.example.e_commerceapplication.general.UserHistoryActivity;
 import com.example.e_commerceapplication.general.UsersFeedbackActivity;
 import com.example.e_commerceapplication.general.data.DataLayer;
 
 public class ProfileFragment extends Fragment {
-    TextView email, username;
-    AppCompatButton terms, logout, history, feedback;
     DataLayer dataLayer;
+
+    FragmentProfileBinding binding;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        binding = FragmentProfileBinding.inflate(inflater);
+//        View view = inflater.inflate(R.layout.fragment_profile, container, false);
         dataLayer = new DataLayer(USERS);
 
-        username = view.findViewById(R.id.username);
-        email = view.findViewById(R.id.uesrEmail);
-        terms = view.findViewById(R.id.terms_conditions);
-        history = view.findViewById(R.id.user_history);
-        feedback = view.findViewById(R.id.user_feedback);
-        logout = view.findViewById(R.id.logOut);
-
-        dataLayer.getCustomerData(username, email);
+        dataLayer.getCustomerData(binding.username, binding.uesrEmail);
 
         if (ADMIN_MODE) {
-            history.setVisibility(View.GONE);
-            feedback.setVisibility(View.VISIBLE);
-            feedback.setOnClickListener(t -> startActivity(new Intent(getContext(), UsersFeedbackActivity.class)));
+            binding.userHistory.setVisibility(View.VISIBLE);
+            binding.userFeedback.setVisibility(View.VISIBLE);
+            binding.userFeedback.setOnClickListener(t -> startActivity(new Intent(getContext(), UsersFeedbackActivity.class)));
+            binding.userHistory.setOnClickListener(v -> startActivity(new Intent(getContext(), UserHistoryActivity.class)));
         } else {
-            history.setVisibility(View.VISIBLE);
-            feedback.setVisibility(View.GONE);
-            history.setOnClickListener(v -> startActivity(new Intent(getContext(), UserHistoryActivity.class)));
+            binding.userHistory.setVisibility(View.GONE);
+            binding.userFeedback.setVisibility(View.GONE);
         }
 
-        logout.setOnClickListener(v -> {
+        binding.logOut.setOnClickListener(v -> {
             dataLayer.getAuth().signOut();
             startActivity(new Intent(getContext(), RegistrationActivity.class));
             requireActivity().finish();
         });
 
-        terms.setOnClickListener(v -> startActivity(new Intent(getContext(), TermsActivity.class)));
+        binding.termsConditions.setOnClickListener(v -> startActivity(new Intent(getContext(), TermsActivity.class)));
 
-        return view;
+        return binding.getRoot();
     }
 }

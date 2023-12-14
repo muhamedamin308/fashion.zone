@@ -30,7 +30,7 @@
 
 
         <TextView
-            android:id="@+id/product_name"
+            android:id="@+id/cc_holder_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_regular"
@@ -48,9 +48,9 @@
             android:id="@+id/item_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@+id/product_name"
-            app:layout_constraintStart_toStartOf="@id/product_name"
-            app:layout_constraintTop_toBottomOf="@id/product_name">
+            app:layout_constraintEnd_toEndOf="@+id/cc_holder_name"
+            app:layout_constraintStart_toStartOf="@id/cc_holder_name"
+            app:layout_constraintTop_toBottomOf="@id/cc_holder_name">
 
 
             <TextView
@@ -86,7 +86,7 @@
 
 
         <TextView
-            android:id="@+id/product_date"
+            android:id="@+id/credit_holder_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_regular"

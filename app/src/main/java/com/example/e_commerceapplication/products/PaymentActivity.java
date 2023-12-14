@@ -68,18 +68,22 @@ public class PaymentActivity extends AppCompatActivity {
         discountValue = getIntent().getDoubleExtra("discount", 0.0);
         shippingValue = getIntent().getDoubleExtra("shipping", 0.0);
         quantity = getIntent().getIntExtra("quantity", 1);
-        totalAmountPrice = ((amount * quantity) + shippingValue) - discountValue;
 
         if (object instanceof NewProductsModel) {
             mainProduct = (NewProductsModel) object;
+            totalAmountPrice = ((amount * quantity) + shippingValue) - discountValue;
         } else if (object instanceof PopularProductsModel) {
             mainProduct = (PopularProductsModel) object;
+            totalAmountPrice = ((amount * quantity) + shippingValue) - discountValue;
         } else if (object instanceof ShowAllModel) {
             mainProduct = (ShowAllModel) object;
+            totalAmountPrice = ((amount * quantity) + shippingValue) - discountValue;
         } else if (object != null) {
             myCartModelList = (List<MyCartModel>) object;
+            totalAmountPrice = (amount + shippingValue) - discountValue;
+        } else {
+            totalAmountPrice = 0.0;
         }
-
         subTotal.setText("$" + amount);
         discount.setText("$" + discountValue);
         shipping.setText("$" + shippingValue);
@@ -149,6 +153,7 @@ public class PaymentActivity extends AppCompatActivity {
                     paymentMap.put("productTotalPrice", totalAmountPrice);
                     paymentMap.put("productRate", mainProduct.getRating());
                     paymentMap.put("productQuantity", quantity);
+                    paymentMap.put("userID", Objects.requireNonNull(dataLayer.getAuth().getCurrentUser()).getUid());
                     dataLayer.customerDataActivation(paymentMap, PaymentActivity.this, USER_PAYMENTS);
                 } else {
                     List<HashMap<String, Object>> paymentMapList = new ArrayList<>();
@@ -158,9 +163,9 @@ public class PaymentActivity extends AppCompatActivity {
                         paymentMap.put("productTotalPrice", product.getTotalPrice());
                         paymentMap.put("productRate", product.getProductRate());
                         paymentMap.put("productQuantity", product.getTotalQuantity());
-                        paymentMapList.add(paymentMap);
+                        paymentMap.put("userID", Objects.requireNonNull(dataLayer.getAuth().getCurrentUser()).getUid());
+                        dataLayer.buyCartData(paymentMap, PaymentActivity.this);
                     });
-                    dataLayer.buyCartData(paymentMapList, PaymentActivity.this);
                     dataLayer.clearCartAfterPayment(myCartModelList);
                 }
                 ratingDialogBar.showDialog(this);

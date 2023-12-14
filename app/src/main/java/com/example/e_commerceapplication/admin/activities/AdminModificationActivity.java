@@ -4,26 +4,23 @@ import static com.example.e_commerceapplication.general.Constants.NEW_PRODUCTS;
 import static com.example.e_commerceapplication.general.Constants.POPULAR_PRODUCTS;
 import static com.example.e_commerceapplication.general.Constants.SHOW_ALL;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.admin.adapter.AdminNewProductsAdapter;
 import com.example.e_commerceapplication.admin.adapter.AdminPopularProductsAdapter;
 import com.example.e_commerceapplication.admin.adapter.AdminShowAllProductsAdapter;
+import com.example.e_commerceapplication.databinding.ActivityAdminModificationBinding;
 import com.example.e_commerceapplication.general.Constants;
 import com.example.e_commerceapplication.general.data.DataLayer;
 import com.example.e_commerceapplication.models.product.NewProductsModel;
 import com.example.e_commerceapplication.models.product.PopularProductsModel;
-import com.example.e_commerceapplication.models.product.Product;
 import com.example.e_commerceapplication.models.product.ShowAllModel;
 
 import java.util.ArrayList;
@@ -31,7 +28,7 @@ import java.util.List;
 
 public class AdminModificationActivity extends AppCompatActivity {
 
-    RecyclerView newRecycler, popularRecycler, allRecycler;
+//    RecyclerView newRecycler, popularRecycler, allRecycler;
     AdminNewProductsAdapter newAdapter;
     AdminPopularProductsAdapter popularAdapter;
     AdminShowAllProductsAdapter allAdapter;
@@ -39,22 +36,17 @@ public class AdminModificationActivity extends AppCompatActivity {
     List<PopularProductsModel> popularProducts;
     List<ShowAllModel> allProducts;
     DataLayer dataLayer;
-    TextView addNew, addAll, addPopular;
+//    TextView addNew, addAll, addPopular;
+    ActivityAdminModificationBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_modification);
-        ImageView exit = findViewById(R.id.exit);
-        newRecycler = findViewById(R.id.rec_new);
-        popularRecycler = findViewById(R.id.rec_popular);
-        allRecycler = findViewById(R.id.rec_show_all);
-        addNew = findViewById(R.id.add_new_product);
-        addPopular = findViewById(R.id.add_new_popular);
-        addAll = findViewById(R.id.add_new_all);
+        binding = ActivityAdminModificationBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        newRecycler.setLayoutManager(new LinearLayoutManager(this));
-        popularRecycler.setLayoutManager(new LinearLayoutManager(this));
-        allRecycler.setLayoutManager(new LinearLayoutManager(this));
+        binding.recNew.setLayoutManager(new LinearLayoutManager(this));
+        binding.recPopular.setLayoutManager(new LinearLayoutManager(this));
+        binding.recShowAll.setLayoutManager(new LinearLayoutManager(this));
 
 
         newProducts = new ArrayList<>();
@@ -66,9 +58,9 @@ public class AdminModificationActivity extends AppCompatActivity {
         allAdapter = new AdminShowAllProductsAdapter(allProducts, this);
 
 
-        newRecycler.setAdapter(newAdapter);
-        popularRecycler.setAdapter(popularAdapter);
-        allRecycler.setAdapter(allAdapter);
+        binding.recNew.setAdapter(newAdapter);
+        binding.recPopular.setAdapter(popularAdapter);
+        binding.recShowAll.setAdapter(allAdapter);
 
         dataLayer = new DataLayer(Constants.USERS);
 
@@ -79,21 +71,21 @@ public class AdminModificationActivity extends AppCompatActivity {
 
 
 
-        addNew.setOnClickListener(v -> {
+        binding.addNewPopular.setOnClickListener(v -> {
             Intent intent = new Intent(this, AdminAddNewProductActivity.class);
             intent.putExtra("type", newProducts.get(0).productTypeConfirm().toString());
             startActivity(intent);
             finish();
         });
 
-        addPopular.setOnClickListener(v -> {
+        binding.addNewPopular.setOnClickListener(v -> {
             Intent intent = new Intent(this, AdminAddNewProductActivity.class);
             intent.putExtra("type", popularProducts.get(0).productTypeConfirm().toString());
             startActivity(intent);
             finish();
         });
 
-        addAll.setOnClickListener(v -> {
+        binding.addNewAll.setOnClickListener(v -> {
             Intent intent = new Intent(this, AdminAddNewProductActivity.class);
             intent.putExtra("type", allProducts.get(0).productTypeConfirm().toString());
             startActivity(intent);
@@ -113,7 +105,7 @@ public class AdminModificationActivity extends AppCompatActivity {
                 NewProductsModel remove = newProducts.get(position);
                 dataLayer.removeNewProductAdminData(AdminModificationActivity.this, newProducts, remove, NEW_PRODUCTS);
             }
-        }).attachToRecyclerView(newRecycler);
+        }).attachToRecyclerView(binding.recNew);
 
 
 
@@ -129,7 +121,7 @@ public class AdminModificationActivity extends AppCompatActivity {
                 PopularProductsModel remove = popularProducts.get(position);
                 dataLayer.removePopularProductAdminData(AdminModificationActivity.this, popularProducts, remove, POPULAR_PRODUCTS);
             }
-        }).attachToRecyclerView(popularRecycler);
+        }).attachToRecyclerView(binding.recPopular);
 
 
 
@@ -145,9 +137,9 @@ public class AdminModificationActivity extends AppCompatActivity {
                 ShowAllModel remove = allProducts.get(position);
                 dataLayer.removeAllProductAdminData(AdminModificationActivity.this, allProducts, remove, SHOW_ALL);
             }
-        }).attachToRecyclerView(allRecycler);
+        }).attachToRecyclerView(binding.recShowAll);
 
 
-        exit.setOnClickListener(v -> finish());
+        binding.exit.setOnClickListener(v -> finish());
     }
 }
