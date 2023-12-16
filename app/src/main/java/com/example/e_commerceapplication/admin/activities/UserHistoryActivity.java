@@ -1,4 +1,4 @@
-package com.example.e_commerceapplication.general;
+package com.example.e_commerceapplication.admin.activities;
 
 import static com.example.e_commerceapplication.general.Constants.ADMIN_PATH;
 import static com.example.e_commerceapplication.general.Constants.USER;

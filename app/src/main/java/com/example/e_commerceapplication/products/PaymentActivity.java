@@ -38,7 +38,6 @@ public class PaymentActivity extends AppCompatActivity {
     private DataLayer dataLayer;
     private Product mainProduct;
     private List<MyCartModel> myCartModelList = null;
-
     private RatingDialogBar ratingDialogBar;
 
     @SuppressLint("SetTextI18n")

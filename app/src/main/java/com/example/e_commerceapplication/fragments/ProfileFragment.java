@@ -15,13 +15,12 @@ import androidx.fragment.app.Fragment;
 import com.example.e_commerceapplication.auth.RegistrationActivity;
 import com.example.e_commerceapplication.databinding.FragmentProfileBinding;
 import com.example.e_commerceapplication.general.TermsActivity;
-import com.example.e_commerceapplication.general.UserHistoryActivity;
-import com.example.e_commerceapplication.general.UsersFeedbackActivity;
+import com.example.e_commerceapplication.admin.activities.UserHistoryActivity;
+import com.example.e_commerceapplication.admin.activities.UsersFeedbackActivity;
 import com.example.e_commerceapplication.general.data.DataLayer;
 
 public class ProfileFragment extends Fragment {
     DataLayer dataLayer;
-
     FragmentProfileBinding binding;
     @Override
     public void onCreate(Bundle savedInstanceState) {

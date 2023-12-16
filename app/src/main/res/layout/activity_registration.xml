@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:text="@string/signup"
         android:textColor="@color/green"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_bias="0.16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +87,29 @@
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintWidth_percent="0.85" />
 
+
+    <TextView
+        android:id="@+id/birthdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_bg"
+        android:drawablePadding="10dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/nunito_regular"
+        android:gravity="center_vertical"
+        android:hint="@string/user_birthday"
+        android:padding="15dp"
+        android:textColor="@color/green"
+        android:textColorHint="@color/g_gray700"
+        android:textSize="18sp"
+        android:onClick="openDatePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintWidth_percent="0.85"
+        app:drawableStartCompat="@drawable/baseline_date_range_24" />
+
     <Button
         android:id="@+id/sign_up_user"
         android:layout_width="0dp"
@@ -101,7 +124,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/birthdate"
         app:layout_constraintVertical_bias="0.2"
         app:layout_constraintWidth_percent="0.5" />
     

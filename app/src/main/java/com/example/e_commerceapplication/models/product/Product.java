@@ -7,6 +7,7 @@ import java.io.Serializable;
 abstract public class Product implements Serializable {
     String image_url, name, description, rating, type;
     double price;
+    int stock;
     public ProductType productType = ProductType.MAIN;
 
     public String getType() {
@@ -72,4 +73,12 @@ abstract public class Product implements Serializable {
         return this.productType;
     }
     abstract public double[] calculatePayments(double amount, double shipping, double discount);
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }

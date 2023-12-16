@@ -47,6 +47,7 @@ import java.util.Objects;
 public class AdminAddNewProductActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     ActivityAdminAddNewProductBinding binding;
     String type, collection;
+    int stock;
     DataLayer dataLayer;
     Uri image;
     Product mainProduct;
@@ -112,6 +113,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
                 String rate = binding.addNewProductRate.getText().toString();
                 String price = binding.newProductPrice.getText().toString();
                 String description = binding.newProductDescription.getText().toString();
+                stock = Integer.parseInt(binding.numberOfStock.getText().toString());
                 uploadFirebase(name, rate, price, description, type, image);
             } else {
                 Toast.makeText(this, "Please Select Image For Your New Product", Toast.LENGTH_SHORT).show();
@@ -133,11 +135,10 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
                mainProduct.setDescription(description);
                mainProduct.setName(name);
                mainProduct.setType(type);
+               mainProduct.setStock(stock);
                dataLayer.getFireStore().collection(collection)
                    .add(mainProduct)
-                   .addOnCompleteListener(task2 -> {
-                       finish();
-                   });
+                   .addOnCompleteListener(task2 -> finish());
            });
         });
     }

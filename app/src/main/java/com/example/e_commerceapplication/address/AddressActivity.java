@@ -36,7 +36,6 @@ public class AddressActivity extends AppCompatActivity implements AddressAdapter
     String address = "";
     private DataLayer dataLayer;
     private Product mainProduct;
-
     ActivityAddressBinding binding;
     @SuppressLint("NotifyDataSetChanged")
     @Override

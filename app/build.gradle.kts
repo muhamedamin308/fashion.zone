@@ -55,5 +55,6 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("com.razorpay:checkout:1.6.33")
     implementation("com.github.AnyChart:AnyChart-Android:1.1.5")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
 
 }

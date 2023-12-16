@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +33,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         dataLayer = new DataLayer(USERS);
+
+        binding.rememberMe.setOnClickListener(v -> {
+            if (TextUtils.isEmpty(binding.email.getText().toString())) {
+                binding.errorEmail.setVisibility(View.VISIBLE);
+            } else {
+                dataLayer.getAuth().sendPasswordResetEmail(binding.email.getText().toString())
+                    .addOnCompleteListener(task -> Toast.makeText(LoginActivity.this, "Reset Password Link has been send to your email.", Toast.LENGTH_SHORT).show());
+            }
+        });
 
         binding.signin.setOnClickListener(v -> signIn());
     }

@@ -71,7 +71,7 @@ public class AdminModificationActivity extends AppCompatActivity {
 
 
 
-        binding.addNewPopular.setOnClickListener(v -> {
+        binding.addNewProduct.setOnClickListener(v -> {
             Intent intent = new Intent(this, AdminAddNewProductActivity.class);
             intent.putExtra("type", newProducts.get(0).productTypeConfirm().toString());
             startActivity(intent);

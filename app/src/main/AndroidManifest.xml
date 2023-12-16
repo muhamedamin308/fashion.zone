@@ -2,10 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -19,22 +24,30 @@
         android:theme="@style/Theme.ECommerceApplication"
         tools:targetApi="31">
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".products.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".general.UserHistoryActivity"
+            android:name=".products.CaptureAct"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme" />
+        <activity
+            android:name=".admin.activities.UserHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".general.UsersFeedbackActivity"
+            android:name=".admin.activities.UsersFeedbackActivity"
             android:exported="false" />
         <activity
             android:name=".admin.activities.AdminAddNewProductActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".admin.activities.AdminModificationActivity"
             android:exported="false" />
         <activity
             android:name=".products.PaymentActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".address.AddAddressActivity"
@@ -52,10 +65,11 @@
             android:name=".products.DetailedActivity"
             android:exported="false" />
         <activity
-            android:name=".start.OnBoardingActivity"
+            android:name=".auth.OnBoardingActivity"
             android:exported="false" />
         <activity
             android:name=".auth.RegistrationActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,6 +79,7 @@
         </activity>
         <activity
             android:name=".auth.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".start.MainActivity"
