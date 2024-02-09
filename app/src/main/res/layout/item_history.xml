@@ -13,7 +13,7 @@
         android:id="@+id/history_cc_cl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/reg_bg"
+        android:background="@color/new_bg"
         android:paddingStart="10dp">
 
         <TextView
@@ -25,6 +25,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +37,7 @@
             android:fontFamily="@font/nunito_regular"
             android:text="@string/_4_5"
             android:textAlignment="center"
-            android:textColor="@color/green"
+            android:textColor="@color/new_green"
             android:textSize="20sp"
             android:textStyle="bold"
             app:drawableEndCompat="@drawable/empty_star_rate"
@@ -84,7 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintVertical_bias="0.1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

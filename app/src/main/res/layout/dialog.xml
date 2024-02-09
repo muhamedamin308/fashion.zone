@@ -16,7 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/app_bg">
+            android:background="@color/new_bg">
 
 
             <com.github.ybq.android.spinkit.SpinKitView
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                app:SpinKit_Color="@color/green"
+                app:SpinKit_Color="@color/new_green"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_regular"
                 android:text="@string/wait"
-                android:textColor="@color/green"
+                android:textColor="@color/new_green"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/progressDialog"
                 app:layout_constraintStart_toStartOf="@+id/progressDialog"

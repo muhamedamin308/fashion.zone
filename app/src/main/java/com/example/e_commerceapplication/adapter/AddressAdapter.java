@@ -11,17 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.general.Constants;
-import com.example.e_commerceapplication.models.address.AddressModel;
+import com.example.e_commerceapplication.classes.address.Address;
 
 import java.util.List;
 
 public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHolder> {
-    private final List<AddressModel> list;
+    private final List<Address> list;
     SelectedAddress selectedAddress;
     private RadioButton selectedRadioButton;
 
 
-    public AddressAdapter(List<AddressModel> list, SelectedAddress selectedAddress) {
+    public AddressAdapter(List<Address> list, SelectedAddress selectedAddress) {
         this.list = list;
         this.selectedAddress = selectedAddress;
     }
@@ -39,8 +39,8 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.addressCity.setText(list.get(position).getCity());
         holder.addressSelected.setOnClickListener(v -> {
-            for (AddressModel addressModel : list)
-                addressModel.setSelected(false);
+            for (Address address: list)
+                address.setSelected(false);
             list.get(position).setSelected(true);
             if (selectedRadioButton != null)
                 selectedRadioButton.setChecked(false);

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_bg"
-    tools:context=".admin.activities.AdminModificationActivity">
+    android:background="@color/new_bg"
+    tools:context=".ui.admin.activities.AdminModificationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +51,6 @@
                     android:text="@string/admin_modification"
                     android:textColor="@color/white"
                     android:textSize="19sp"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/exit"
                     app:layout_constraintStart_toEndOf="@id/exit"
                     app:layout_constraintTop_toTopOf="@id/exit"
@@ -89,7 +88,7 @@
                 android:fontFamily="@font/nunito_regular"
                 android:gravity="end"
                 android:text="@string/add_new_item"
-                android:textColor="@color/green"
+                android:textColor="@color/new_font_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -134,7 +133,7 @@
                 android:fontFamily="@font/nunito_regular"
                 android:gravity="end"
                 android:text="@string/add_new_item"
-                android:textColor="@color/green"
+                android:textColor="@color/new_font_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -180,7 +179,7 @@
                 android:fontFamily="@font/nunito_regular"
                 android:gravity="end"
                 android:text="@string/add_new_item"
-                android:textColor="@color/green"
+                android:textColor="@color/new_font_color"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

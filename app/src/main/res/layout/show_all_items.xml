@@ -40,7 +40,7 @@
                     android:text="100.99"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    android:textColor="@color/app_bg"
+                    android:textColor="@color/new_font_color"
                     android:layout_toEndOf="@id/dollar_sign"/>
 
 
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_regular"
                     android:text="@string/price"
-                    android:textColor="@color/app_bg"
+                    android:textColor="@color/white"
                     android:textSize="18sp"/>
 
             </RelativeLayout>
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:text="@string/we_provide_best_products"
-                android:textColor="@color/app_bg"
+                android:textColor="@color/new_font_color"
                 android:fontFamily="@font/nunito_black"
                 android:textAlignment="center" />
         </LinearLayout>

@@ -13,19 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.models.product.CategoryModel;
-import com.example.e_commerceapplication.products.ShowAllActivity;
+import com.example.e_commerceapplication.classes.product.Category;
+import com.example.e_commerceapplication.ui.products.ShowAllActivity;
 
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
 
-    private Context context;
-    private List<CategoryModel> list;
+    private final Context context;
+    private final List<Category> list;
 
-    public CategoryAdapter(Context context, List<CategoryModel> categoryModels){
+    public CategoryAdapter(Context context, List<Category> categories){
         this.context = context;
-        list = categoryModels;
+        list = categories;
     }
     @NonNull
     @Override

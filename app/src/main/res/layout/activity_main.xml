@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".start.MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
     <LinearLayout
         android:id="@+id/home_page_linear"
@@ -58,6 +58,7 @@
             android:id="@+id/home_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/new_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +71,7 @@
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/all_items_bg"
+        android:background="@drawable/bottom_nav_bg"
         app:menu="@menu/bottom_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +82,7 @@
         android:id="@+id/bottomNavAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/all_items_bg"
+        android:background="@drawable/bottom_nav_bg"
         app:menu="@menu/admin_menu_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

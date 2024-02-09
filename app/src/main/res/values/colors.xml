@@ -24,4 +24,22 @@
     <color name="app_bg">#161A30</color>
     <color name="item_bg">#19182C</color>
     <color name="address_bg">#373650</color>
+
+    <color name="new_bg">#0d1d25</color>
+
+    <color name="new_item_bg">#104c64</color>
+
+    <color name="new_green">#c6c6d0</color>
+
+    <color name="new_effected">#d59d80</color>
+    <color name="new_effected_decrease">#7A5A49</color>
+
+    <color name="new_font_color">#c0754d</color>
+
+    <color name="new_desc">#b6410f</color>
+    <color name="new_desc_increased">#EA5414</color>
+
+    <color name="new_error">#b51a2b</color>
+    <color name="new_rank">#b54f5c</color>
+
 </resources>

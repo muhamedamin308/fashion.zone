@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/address_bg">
+        android:background="@color/new_item_bg">
 
         <ImageView
             android:layout_width="120dp"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:background="@color/g_orange_yellow"
+            android:background="@color/new_rank"
             android:fontFamily="@font/nunito_black"
             android:padding="6dp"
             android:text="@string/order"
@@ -75,7 +75,7 @@
                 android:textStyle="bold"
                 android:id="@+id/dollar"
                 android:text="@string/price"
-                android:textColor="@color/green"
+                android:textColor="@color/new_green"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,7 @@
                 android:textStyle="bold"
                 android:id="@+id/all_product_price"
                 android:text="@string/_90"
-                android:textColor="@color/green"
+                android:textColor="@color/new_green"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@id/dollar"
                 app:layout_constraintStart_toEndOf="@id/dollar"

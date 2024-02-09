@@ -8,6 +8,6 @@
     android:padding="9dp"
     android:text="shoes"
     android:paddingStart="15dp"
-    android:background="@color/app_bg"
-    android:textColor="@color/green"
-    android:textSize="17sp" />
+    android:background="@color/new_bg"
+    android:textColor="@color/new_green"
+    android:textSize="18sp" />

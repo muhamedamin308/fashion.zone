@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/reg_bg"
-    tools:context=".address.AddressActivity">
+    tools:context=".ui.address.AddressActivity">
 
 
     <LinearLayout
@@ -77,7 +77,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/add_address"
-        android:textColor="@color/app_bg"
+        android:textColor="@color/new_bg"
+        android:backgroundTint="@color/new_green"
         android:fontFamily="@font/nunito_semibold"
         app:layout_constraintBottom_toTopOf="@+id/payment_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,8 +90,9 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
         android:text="@string/continue_to_payment"
-        android:textColor="@color/app_bg"
+        android:textColor="@color/new_bg"
         android:fontFamily="@font/nunito_semibold"
+        android:backgroundTint="@color/new_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

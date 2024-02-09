@@ -5,18 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".products.DetailedActivity">
+    tools:context=".ui.products.DetailedActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_bg">
+        android:background="@color/new_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/app_bg"
+            android:background="@color/new_bg"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,20 +32,20 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="14dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_height="match_parent">
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="20dp">
 
                     <ImageView
                         android:id="@+id/exit"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:fontFamily="@font/nunito_black"
                         android:padding="10dp"
                         android:src="@drawable/baseline_clear_24"
                         android:textColor="@color/white"
-                        android:fontFamily="@font/nunito_black"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -56,17 +56,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_black"
+                        android:gravity="center_vertical"
                         android:padding="6dp"
                         android:text="@string/new_item"
                         android:textColor="@color/white"
                         android:textSize="19sp"
                         android:textStyle="bold"
-                        tools:layout_editor_absoluteX="54dp"
-                        android:gravity="center_vertical"
+                        app:layout_constraintBottom_toBottomOf="@id/exit"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/exit"
-                        app:layout_constraintBottom_toBottomOf="@id/exit"
-                        />
+                        tools:layout_editor_absoluteX="54dp" />
+
+                    <TextView
+                        android:id="@+id/stockCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_black"
+                        android:padding="6dp"
+                        android:text="Stock: 9"
+                        android:textColor="@color/white"
+                        android:textSize="19sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/new_item_sign"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/new_item_sign" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ImageView
@@ -92,7 +105,7 @@
                     android:fontFamily="@font/nunito_black"
                     android:layout_weight="1"
                     android:text="@string/product_name"
-                    android:textColor="@color/white"
+                    android:textColor="@color/new_font_color"
                     android:textSize="28sp"
                     android:textStyle="bold"
                     android:layout_marginStart="10dp"
@@ -114,8 +127,8 @@
                         style="?android:attr/ratingBarStyleSmall"
                         android:textSize="34sp"
                         android:textStyle="bold"
-                        android:backgroundTint="@color/item_bg"
-                        android:progressBackgroundTint="@color/green"
+                        android:backgroundTint="@color/new_effected"
+                        android:progressBackgroundTint="@color/new_green"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@id/product_detail_rate"
                         app:layout_constraintBottom_toBottomOf="@id/product_detail_rate" />
@@ -127,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_black"
                         android:text="@string/_4_5"
-                        android:textColor="@color/white"
+                        android:textColor="@color/new_font_color"
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:layout_marginEnd="3dp"
@@ -160,7 +173,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_black"
                     android:text="@string/_9_99"
-                    android:textColor="@color/green"
+                    android:textColor="@color/new_green"
                     android:textSize="34sp"
                     android:textStyle="bold"
                     android:layout_toEndOf="@id/dollar_sign"
@@ -174,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_regular"
                     android:text="@string/price"
-                    android:textColor="@color/white"
+                    android:textColor="@color/new_font_color"
                     android:textSize="34sp"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"/>
@@ -190,10 +203,10 @@
 
 
                 <ImageView
-                    android:id="@+id/image_add_one_item"
+                    android:id="@+id/image_remove_one_item"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/baseline_add_circle_24"/>
+                    android:src="@drawable/baseline_remove_circle_24"/>
 
                 <TextView
                     android:id="@+id/quantity"
@@ -208,10 +221,10 @@
                     android:layout_marginEnd="10dp"/>
 
                 <ImageView
-                    android:id="@+id/image_remove_one_item"
+                    android:id="@+id/image_add_one_item"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/baseline_remove_circle_24"/>
+                    android:src="@drawable/baseline_add_circle_24"/>
 
             </LinearLayout>
             <RelativeLayout
@@ -229,7 +242,7 @@
                     android:fontFamily="@font/nunito_bold"
                     android:text="@string/add_to_card"
                     android:textAllCaps="false"
-                    android:textColor="@color/app_bg"
+                    android:textColor="@color/new_bg"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"
@@ -244,7 +257,7 @@
                     android:fontFamily="@font/nunito_bold"
                     android:text="@string/buy_now"
                     android:textAllCaps="false"
-                    android:textColor="@color/app_bg"
+                    android:textColor="@color/new_bg"
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center_horizontal"

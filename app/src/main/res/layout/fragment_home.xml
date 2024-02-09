@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/app_bg"
-    tools:context=".fragments.HomeFragment">
+    android:background="@color/new_bg"
+    tools:context=".ui.fragments.HomeFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
             android:id="@+id/adminModification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/new_green"
             android:clickable="true"
             android:visibility="gone"
             android:src="@drawable/baseline_add_circle_24"
@@ -60,7 +60,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/nunito_regular"
                     android:text="@string/category"
-                    android:textColor="@color/white"
+                    android:textColor="@color/new_desc_increased"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                     android:fontFamily="@font/nunito_regular"
                     android:gravity="end"
                     android:text="@string/see_all"
-                    android:textColor="@color/green"
+                    android:textColor="@color/new_green"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -91,16 +91,15 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:layout_marginTop="10dp"
                 android:elevation="6dp"
-                app:cardCornerRadius="5dp">
+                app:cardCornerRadius="6dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/app_bg"
+                    android:background="@color/new_bg"
                     android:orientation="vertical">
 
                     <RelativeLayout
@@ -114,7 +113,7 @@
                             android:layout_marginStart="9dp"
                             android:fontFamily="@font/nunito_regular"
                             android:text="@string/new_products"
-                            android:textColor="@color/white"
+                            android:textColor="@color/new_desc_increased"
                             android:textSize="21sp"
                             android:textStyle="bold" />
 
@@ -125,7 +124,7 @@
                             android:layout_below="@+id/new_product_name"
                             android:layout_marginStart="9dp"
                             android:text="@string/we_provide_best_products"
-                            android:textColor="@color/green"/>
+                            android:textColor="@color/new_effected"/>
 
                         <TextView
                             android:id="@+id/newProducts_see_all"
@@ -136,7 +135,7 @@
                             android:gravity="end"
                             android:fontFamily="@font/nunito_regular"
                             android:text="@string/see_all"
-                            android:textColor="@color/green"
+                            android:textColor="@color/new_green"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -170,7 +169,7 @@
                         android:layout_marginStart="9dp"
                         android:fontFamily="@font/nunito_regular"
                         android:text="@string/popular_products"
-                        android:textColor="@color/white"
+                        android:textColor="@color/new_desc_increased"
                         android:textSize="21sp"
                         android:textStyle="bold" />
 
@@ -181,17 +180,17 @@
                         android:layout_marginStart="9dp"
                         android:fontFamily="@font/nunito_black"
                         android:text="@string/we_provide_best_products"
-                        android:textColor="@color/green" />
+                        android:textColor="@color/new_effected" />
 
                     <TextView
                         android:id="@+id/popular_see_all"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/nunito_regular"
                         android:text="See All"
-                        android:textColor="@color/green"
+                        android:textColor="@color/new_green"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </RelativeLayout>

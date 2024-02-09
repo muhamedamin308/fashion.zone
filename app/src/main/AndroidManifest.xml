@@ -25,50 +25,50 @@
         tools:targetApi="31">
         <activity
             android:windowSoftInputMode="adjustResize"
-            android:name=".products.SearchActivity"
+            android:name=".ui.products.SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".products.CaptureAct"
+            android:name=".ui.products.CaptureAct"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
             android:theme="@style/zxing_CaptureTheme" />
         <activity
-            android:name=".admin.activities.UserHistoryActivity"
+            android:name=".ui.admin.activities.UserHistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".admin.activities.UsersFeedbackActivity"
+            android:name=".ui.admin.activities.UsersFeedbackActivity"
             android:exported="false" />
         <activity
-            android:name=".admin.activities.AdminAddNewProductActivity"
+            android:name=".ui.admin.activities.AdminAddNewProductActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
-            android:name=".admin.activities.AdminModificationActivity"
+            android:name=".ui.admin.activities.AdminModificationActivity"
             android:exported="false" />
         <activity
-            android:name=".products.PaymentActivity"
+            android:name=".ui.products.PaymentActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
-            android:name=".address.AddAddressActivity"
+            android:name=".ui.address.AddAddressActivity"
             android:exported="false" />
         <activity
-            android:name=".address.AddressActivity"
+            android:name=".ui.address.AddressActivity"
             android:exported="false" />
         <activity
-            android:name=".general.TermsActivity"
+            android:name=".ui.activities.TermsActivity"
             android:exported="false" />
         <activity
-            android:name=".products.ShowAllActivity"
+            android:name=".ui.products.ShowAllActivity"
             android:exported="false" />
         <activity
-            android:name=".products.DetailedActivity"
+            android:name=".ui.products.DetailedActivity"
             android:exported="false" />
         <activity
-            android:name=".auth.OnBoardingActivity"
+            android:name=".ui.auth.OnBoardingActivity"
             android:exported="false" />
         <activity
-            android:name=".auth.RegistrationActivity"
+            android:name=".ui.auth.RegistrationActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
@@ -78,11 +78,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".auth.LoginActivity"
+            android:name=".ui.auth.LoginActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
-            android:name=".start.MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:exported="false" />
     </application>
 

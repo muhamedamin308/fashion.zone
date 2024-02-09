@@ -13,14 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.models.product.NewProductsModel;
-import com.example.e_commerceapplication.products.DetailedActivity;
+import com.example.e_commerceapplication.classes.product.NewProduct;
+import com.example.e_commerceapplication.ui.products.DetailedActivity;
 
 import java.util.List;
 
 public class NewProductsAdapter extends RecyclerView.Adapter<NewProductsAdapter.ViewHolder> {
 
-    private final List<NewProductsModel> list;
+    private final List<NewProduct> list;
     private final Context context;
     @NonNull
     @Override
@@ -41,7 +41,7 @@ public class NewProductsAdapter extends RecyclerView.Adapter<NewProductsAdapter.
         });
     }
 
-    public NewProductsAdapter(List<NewProductsModel> list, Context context) {
+    public NewProductsAdapter(List<NewProduct> list, Context context) {
         this.list = list;
         this.context = context;
     }

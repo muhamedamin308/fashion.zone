@@ -11,6 +11,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/product_update"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/all_items_bg"
@@ -23,7 +24,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/heart_shpping_bag"
+            android:src="@drawable/shopping_bags2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,9 +34,9 @@
             android:id="@+id/cc_holder_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
+            android:fontFamily="@font/nunito_black"
             android:text="@string/product_name"
-            android:textColor="@color/white"
+            android:textColor="@color/new_green"
             android:textSize="17sp"
             android:textStyle="bold"
             android:layout_marginHorizontal="10dp"
@@ -62,7 +63,7 @@
                 android:textStyle="bold"
                 android:id="@+id/dollar"
                 android:text="@string/dollar_sign"
-                android:textColor="@color/white"
+                android:textColor="@color/new_green"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +77,7 @@
                 android:textStyle="bold"
                 android:id="@+id/all_product_price"
                 android:text="@string/_90"
-                android:textColor="@color/white"
+                android:textColor="@color/new_green"
                 android:textSize="18sp"
                 android:layout_marginStart="3dp"
                 app:layout_constraintBottom_toBottomOf="@id/dollar"

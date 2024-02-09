@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_bg"
-    tools:context=".fragments.CartFragment">
+    android:background="@color/new_bg"
+    tools:context=".ui.fragments.CartFragment">
 
 
 
@@ -22,9 +22,9 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:alpha="0.6"
-            android:src="@drawable/green_empty_shopping"
+            android:src="@drawable/empty_cart_3d"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -38,7 +38,7 @@
             app:layout_constraintStart_toStartOf="@id/imageView"
             app:layout_constraintEnd_toEndOf="@id/imageView"
             android:layout_marginTop="10dp"
-            android:textColor="@color/g_gray900"
+            android:textColor="@color/new_green"
             android:fontFamily="@font/nunito_semibold"
             android:textSize="20sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -86,7 +86,7 @@
             android:layout_margin="10dp"
             android:gravity="center_vertical"
             android:text="@string/total_price"
-            android:textColor="@color/g_gray500"
+            android:textColor="@color/new_green"
             android:textSize="20sp"
             android:layout_centerVertical="true"/>
 
@@ -95,13 +95,17 @@
             android:id="@+id/my_cart_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_margin="10dp"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/nunito_black"
             android:gravity="center_vertical"
             android:text="@string/_0_0"
-            android:textColor="@color/g_gray500"
-            android:textSize="20sp" />
+            android:textColor="@color/new_font_color"
+            android:textSize="22sp" />
 
 
     </RelativeLayout>
@@ -118,7 +122,7 @@
         android:fontFamily="@font/nunito_bold"
         android:text="@string/buy_now"
         android:textAllCaps="false"
-        android:textColor="@color/app_bg"
+        android:textColor="@color/new_bg"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

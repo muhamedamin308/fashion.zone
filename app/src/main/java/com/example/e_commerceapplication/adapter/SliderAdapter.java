@@ -13,13 +13,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.general.Constants;
-
-import org.w3c.dom.Text;
 
 public class SliderAdapter extends PagerAdapter {
     Context context;

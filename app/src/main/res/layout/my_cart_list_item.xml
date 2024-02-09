@@ -23,7 +23,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/heart_shpping_bag"
+            android:src="@drawable/mobile_shopping_ad"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -113,6 +113,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/increase"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/product_counter"
+            app:layout_constraintEnd_toEndOf="@+id/product_counter"
+            app:layout_constraintStart_toStartOf="@+id/product_counter"
+            app:srcCompat="@drawable/baseline_add_circle_24" />
+
+        <ImageView
+            android:id="@+id/decrease"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/product_counter"
+            app:layout_constraintStart_toStartOf="@+id/product_counter"
+            app:layout_constraintTop_toBottomOf="@+id/product_counter"
+            app:srcCompat="@drawable/baseline_remove_circle_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

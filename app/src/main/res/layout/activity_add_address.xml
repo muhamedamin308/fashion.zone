@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".address.AddAddressActivity"
-    android:background="@color/app_bg">
+    tools:context=".ui.address.AddAddressActivity"
+    android:background="@color/new_bg">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,10 +58,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/new_green"
         android:id="@+id/getLocation"
         android:text="@string/get_location"
-        android:textColor="@color/app_bg"
+        android:textColor="@color/new_bg"
         android:fontFamily="@font/nunito_black"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
@@ -71,10 +71,10 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:backgroundTint="@color/green"
+        android:backgroundTint="@color/new_green"
         android:id="@+id/confirmLocation"
         android:text="@string/confirm_location"
-        android:textColor="@color/app_bg"
+        android:textColor="@color/new_bg"
         android:fontFamily="@font/nunito_black"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/getLocation"

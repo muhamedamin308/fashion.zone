@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".products.SearchActivity">
+    tools:context=".ui.products.SearchActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_bg">
+        android:background="@color/new_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/app_bg"
+            android:background="@color/new_bg"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp">
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -104,8 +105,8 @@
                         android:hint="@string/search"
                         android:inputType="textEmailAddress"
                         android:padding="15dp"
-                        android:textColor="@color/green"
-                        android:textColorHint="@color/g_gray700"
+                        android:textColor="@color/new_green"
+                        android:textColorHint="@color/new_effected"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/voice_search"
                         app:layout_constraintStart_toEndOf="@id/barcode_search"
@@ -130,7 +131,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Search Now..."
-                    android:textColor="@color/green"
+                    android:textColor="@color/new_green"
                     android:textSize="20sp"
                     android:textStyle="italic"
                     android:fontFamily="@font/nunito_black"

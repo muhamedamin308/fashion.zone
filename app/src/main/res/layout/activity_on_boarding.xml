@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:background="@drawable/reg_bg"
-    tools:context=".auth.OnBoardingActivity">
+    tools:context=".ui.auth.OnBoardingActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Lets get started"
-            android:textColor="@color/app_bg"
+            android:textColor="@color/new_bg"
             android:fontFamily="@font/nunito_bold"
             android:textSize="16sp" />
 
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/app_bg"
+            android:backgroundTint="@color/new_bg"
             android:padding="30dp"
             android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
 
