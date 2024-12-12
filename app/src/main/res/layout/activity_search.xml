@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/new_bg"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -26,55 +26,49 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/detailed_top_bg"
-                android:orientation="vertical"
-                android:paddingTop="5dp">
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="14dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="10dp">
 
                     <ImageView
                         android:id="@+id/exit"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:fontFamily="@font/nunito_black"
                         android:padding="10dp"
                         android:src="@drawable/baseline_clear_24"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/black" />
 
 
                     <TextView
                         android:id="@+id/new_item_sign"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_black"
+                        android:fontFamily="@font/roboto_flex"
                         android:gravity="center_vertical"
-                        android:padding="6dp"
-                        android:text="Search Between Products"
-                        android:textColor="@color/white"
+                        android:text="Explore Products"
+                        android:textColor="@color/black"
                         android:textSize="19sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@id/exit"
-                        app:layout_constraintStart_toEndOf="@id/exit"
-                        app:layout_constraintTop_toTopOf="@id/exit"
-                        tools:layout_editor_absoluteX="54dp" />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/exit" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -89,7 +83,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
+                        app:srcCompat="@drawable/baseline_qr_code_scanner_24"
+                        app:tint="@color/g_gray900" />
 
 
                     <EditText
@@ -99,14 +94,11 @@
                         android:background="@drawable/search_bg"
                         android:drawableStart="@drawable/search_ic"
                         android:drawablePadding="10dp"
-                        android:elevation="3dp"
-                        android:fontFamily="@font/nunito_regular"
-                        android:gravity="center_vertical"
                         android:hint="@string/search"
-                        android:inputType="textEmailAddress"
+                        android:inputType="text"
                         android:padding="15dp"
-                        android:textColor="@color/new_green"
-                        android:textColorHint="@color/new_effected"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/g_gray900"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/voice_search"
                         app:layout_constraintStart_toEndOf="@id/barcode_search"
@@ -121,7 +113,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/baseline_mic_none_24" />
+                        app:srcCompat="@drawable/baseline_mic_none_24"
+                        app:tint="@color/g_gray900" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,14 +122,13 @@
                     android:id="@+id/searchBtn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:text="Search Now..."
-                    android:textColor="@color/new_green"
-                    android:textSize="20sp"
-                    android:textStyle="italic"
-                    android:fontFamily="@font/nunito_black"
+                    android:fontFamily="@font/roboto_flex"
+                    android:text="Click me to search"
                     android:textAlignment="center"
-                    android:layout_marginTop="10dp"/>
+                    android:textColor="@color/g_dark_blue"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -146,6 +138,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
+                tools:itemCount="0"
                 tools:listitem="@layout/show_all_items" />
         </LinearLayout>
 

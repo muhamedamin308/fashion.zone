@@ -3,7 +3,6 @@ package com.example.e_commerceapplication.general;
 import android.annotation.SuppressLint;
 
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.classes.users.Admin;
 import com.example.e_commerceapplication.ui.dialogs.LoadingDialogBar;
 
 import java.util.HashMap;
@@ -38,10 +37,6 @@ public class Constants {
     public static final String USER_PAYMENTS = "UserPayments";
     public static final String PAYMENT_SUCCESSFUL = "Payment Done Successfully";
     public static final String ADD_TO_CART_SUCCESSFUL = "Product Added To Card Successfully";
-    public static final HashMap<String, String> adminData = new HashMap<String, String>() {{
-        put("adminName", Admin.adminName);
-        put("adminEmail", Admin.adminEmail);
-    }};
     public static final String ADMIN_PATH = "admin";
     @SuppressLint("StaticFieldLeak")
     public static LoadingDialogBar loadingDialogBar = null;

@@ -5,10 +5,6 @@ import static com.example.e_commerceapplication.general.Constants.POPULAR_PRODUC
 import static com.example.e_commerceapplication.general.Constants.SHOW_ALL;
 import static com.example.e_commerceapplication.general.Constants.USERS;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -20,22 +16,23 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.databinding.ActivityAdminAddNewProductBinding;
-import com.example.e_commerceapplication.database.DataLayer;
+import com.example.e_commerceapplication.classes.product.AllProducts;
 import com.example.e_commerceapplication.classes.product.NewProduct;
 import com.example.e_commerceapplication.classes.product.PopularProduct;
 import com.example.e_commerceapplication.classes.product.Product;
-import com.example.e_commerceapplication.classes.product.AllProducts;
+import com.example.e_commerceapplication.database.DataLayer;
+import com.example.e_commerceapplication.databinding.ActivityAdminAddNewProductBinding;
 import com.example.e_commerceapplication.ui.activities.MainActivity;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-//import com.google.firebase.storage.FirebaseStorage;
-//import com.google.firebase.storage.StorageReference;
 
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -96,7 +93,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
                     collection = NEW_PRODUCTS;
                 }
                 break;
-                case ALL:{
+                case ALL: {
                     binding.numberOfStock.setVisibility(View.GONE);
                     collection = SHOW_ALL;
                 }
@@ -104,7 +101,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
                     binding.numberOfStock.setVisibility(View.GONE);
                     collection = POPULAR_PRODUCTS;
                 }
-                 break;
+                break;
             }
             binding.addNewProductName.setText(mainProduct.getName());
             binding.newProductDescription.setText(mainProduct.getDescription());
@@ -172,7 +169,7 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
             updatedProduct.put("description", description);
             updatedProduct.put("name", name);
             updatedProduct.put("type", type);
-            if (stock != 0){
+            if (stock != 0) {
                 updatedProduct.put("stock", stock);
             }
 
@@ -190,18 +187,17 @@ public class AdminAddNewProductActivity extends AppCompatActivity implements Ada
         } else {
             final StorageReference reference = FirebaseStorage.getInstance().getReference().child(System.currentTimeMillis() + "." + getFileExtension(image));
 
-            reference.putFile(image).addOnCompleteListener(task -> {
-                reference.getDownloadUrl().addOnSuccessListener(uri -> {
-                    mainProduct.setRating(rate);
-                    mainProduct.setPrice(Double.parseDouble(price));
-                    mainProduct.setImage_url(uri.toString());
-                    mainProduct.setDescription(description);
-                    mainProduct.setName(name);
-                    mainProduct.setType(type);
-                    mainProduct.setStock(stock);
-                    dataLayer.getFireStore().collection(collection).add(mainProduct).addOnCompleteListener(task2 -> finish());
-                });
-            });
+            reference.putFile(image).addOnCompleteListener(task ->
+                    reference.getDownloadUrl().addOnSuccessListener(uri -> {
+                        mainProduct.setRating(rate);
+                        mainProduct.setPrice(Double.parseDouble(price));
+                        mainProduct.setImage_url(uri.toString());
+                        mainProduct.setDescription(description);
+                        mainProduct.setName(name);
+                        mainProduct.setType(type);
+                        mainProduct.setStock(stock);
+                        dataLayer.getFireStore().collection(collection).add(mainProduct).addOnCompleteListener(task2 -> finish());
+                    }));
         }
     }
 

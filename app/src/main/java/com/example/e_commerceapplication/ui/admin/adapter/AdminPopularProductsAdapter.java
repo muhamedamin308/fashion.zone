@@ -56,9 +56,9 @@ public class AdminPopularProductsAdapter extends RecyclerView.Adapter<AdminPopul
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView productName, productPrice;
-        ImageView productImage;
-        ConstraintLayout item;
+        final TextView productName, productPrice;
+        final ImageView productImage;
+        final ConstraintLayout item;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

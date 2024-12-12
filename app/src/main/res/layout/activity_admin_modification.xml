@@ -16,45 +16,40 @@
             android:id="@+id/top_admin_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/detailed_top_bg"
-            android:orientation="vertical"
-            android:paddingTop="5dp">
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp">
 
                 <ImageView
                     android:id="@+id/exit"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:fontFamily="@font/nunito_black"
                     android:padding="10dp"
                     android:src="@drawable/baseline_clear_24"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
 
 
                 <TextView
                     android:id="@+id/new_item_sign"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_black"
+                    android:fontFamily="@font/roboto_flex"
                     android:gravity="center_vertical"
-                    android:padding="6dp"
                     android:text="@string/admin_modification"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="19sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/exit"
-                    app:layout_constraintStart_toEndOf="@id/exit"
-                    app:layout_constraintTop_toTopOf="@id/exit"
-                    tools:layout_editor_absoluteX="54dp" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/exit" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
@@ -73,9 +68,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/roboto_flex"
                 android:text="@string/new_products"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="21sp"
                 android:textStyle="bold" />
 
@@ -85,10 +80,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/roboto_flex"
                 android:gravity="end"
                 android:text="@string/add_new_item"
-                android:textColor="@color/new_font_color"
+                android:textColor="@color/g_gray900"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -101,7 +96,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="10dp"
             tools:itemCount="1"
-            tools:listitem="@layout/admin_item"/>
+            tools:listitem="@layout/admin_item" />
 
 
         <LinearLayout
@@ -118,9 +113,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/roboto_flex"
                 android:text="@string/popular_products"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="21sp"
                 android:textStyle="bold" />
 
@@ -130,10 +125,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/roboto_flex"
                 android:gravity="end"
                 android:text="@string/add_new_item"
-                android:textColor="@color/new_font_color"
+                android:textColor="@color/g_gray900"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -146,8 +141,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="10dp"
             tools:itemCount="1"
-            tools:listitem="@layout/admin_item"/>
-
+            tools:listitem="@layout/admin_item" />
 
 
         <LinearLayout
@@ -164,9 +158,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/roboto_flex"
                 android:text="@string/see_all_products"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="21sp"
                 android:textStyle="bold" />
 
@@ -176,10 +170,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/roboto_flex"
                 android:gravity="end"
                 android:text="@string/add_new_item"
-                android:textColor="@color/new_font_color"
+                android:textColor="@color/g_gray900"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -192,7 +186,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="10dp"
             tools:itemCount="1"
-            tools:listitem="@layout/admin_item"/>
+            tools:listitem="@layout/admin_item" />
 
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

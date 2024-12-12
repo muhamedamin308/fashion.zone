@@ -15,10 +15,9 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.databinding.ActivityRegistrationBinding;
-import com.example.e_commerceapplication.database.DataLayer;
 import com.example.e_commerceapplication.classes.users.User;
-import com.example.e_commerceapplication.general.Constants;
+import com.example.e_commerceapplication.database.DataLayer;
+import com.example.e_commerceapplication.databinding.ActivityRegistrationBinding;
 import com.example.e_commerceapplication.ui.activities.MainActivity;
 
 import java.util.Calendar;

@@ -1,11 +1,9 @@
 package com.example.e_commerceapplication.ui.activities;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ImageView;
-
-import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.databinding.ActivityTermsBinding;
 
 public class TermsActivity extends AppCompatActivity {

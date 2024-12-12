@@ -103,7 +103,7 @@ public class PaymentActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void afterTextChanged(Editable s) {
-                if (!s.toString().equals("")) {
+                if (!s.toString().isEmpty()) {
                     if (s.toString().length() % temp == 0) {
                         temp += 5;
                         s.append("-");
@@ -127,7 +127,7 @@ public class PaymentActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void afterTextChanged(Editable s) {
-                if (!s.toString().equals("")) {
+                if (!s.toString().isEmpty()) {
                     if (s.toString().length() % temp == 0) {
                         temp += 3;
                         s.append("/");

@@ -1,7 +1,6 @@
 package com.example.e_commerceapplication.adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -41,12 +40,12 @@ public class PopularProductsAdapter extends RecyclerView.Adapter<PopularProducts
         Glide.with(context).load(popularProductList.get(position).getImage_url()).into(holder.allProductImage);
         holder.allProductName.setText(popularProductList.get(position).getName());
         holder.allProductPrice.setText(String.valueOf(popularProductList.get(position).getPrice()));
-        holder.itemView.setOnClickListener(v ->{
+        holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailedActivity.class);
             intent.putExtra("detailed", popularProductList.get(position));
             context.startActivity(intent);
         });
-        holder.allProductOrder.setText("#"+ popularProductList.get(position).getOrder());
+        holder.allProductOrder.setText("#" + popularProductList.get(position).getOrder());
     }
 
     @Override
@@ -57,6 +56,7 @@ public class PopularProductsAdapter extends RecyclerView.Adapter<PopularProducts
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView allProductPrice, allProductName, allProductOrder;
         ImageView allProductImage;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             allProductImage = itemView.findViewById(R.id.all_product_img);

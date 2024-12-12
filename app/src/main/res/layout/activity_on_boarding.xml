@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:background="@drawable/reg_bg"
+    android:padding="20dp"
     tools:context=".ui.auth.OnBoardingActivity">
 
     <androidx.viewpager.widget.ViewPager
@@ -26,15 +26,16 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:visibility="invisible"
             android:id="@+id/get_started_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/g_dark_blue"
+            android:fontFamily="@font/roboto_flex"
             android:padding="10dp"
             android:text="Lets get started"
             android:textColor="@color/new_bg"
-            android:fontFamily="@font/nunito_bold"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:visibility="invisible" />
 
         <LinearLayout
             android:id="@+id/dots"
@@ -50,9 +51,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:backgroundTint="@color/new_bg"
             android:padding="30dp"
-            android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+            android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:tint="@color/black" />
 
 
     </RelativeLayout>

@@ -58,9 +58,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:fontFamily="@font/nunito_regular"
+                    android:fontFamily="@font/roboto_flex"
                     android:text="@string/category"
-                    android:textColor="@color/new_desc_increased"
+                    android:textColor="@color/black"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -70,10 +70,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/nunito_regular"
+                    android:fontFamily="@font/roboto_flex"
                     android:gravity="end"
                     android:text="@string/see_all"
-                    android:textColor="@color/new_green"
+                    android:textColor="@color/g_gray900"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -111,20 +111,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="9dp"
-                            android:fontFamily="@font/nunito_regular"
+                            android:fontFamily="@font/roboto_flex"
                             android:text="@string/new_products"
-                            android:textColor="@color/new_desc_increased"
+                            android:textColor="@color/black"
                             android:textSize="21sp"
                             android:textStyle="bold" />
-
-                        <TextView
-                            android:fontFamily="@font/nunito_black"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/new_product_name"
-                            android:layout_marginStart="9dp"
-                            android:text="@string/we_provide_best_products"
-                            android:textColor="@color/new_effected"/>
 
                         <TextView
                             android:id="@+id/newProducts_see_all"
@@ -133,9 +124,9 @@
                             android:layout_alignParentEnd="true"
                             android:layout_marginEnd="8dp"
                             android:gravity="end"
-                            android:fontFamily="@font/nunito_regular"
+                            android:fontFamily="@font/roboto_flex"
                             android:text="@string/see_all"
-                            android:textColor="@color/new_green"
+                            android:textColor="@color/g_gray900"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
@@ -167,20 +158,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="9dp"
-                        android:fontFamily="@font/nunito_regular"
+                        android:fontFamily="@font/roboto_flex"
                         android:text="@string/popular_products"
-                        android:textColor="@color/new_desc_increased"
+                        android:textColor="@color/black"
                         android:textSize="21sp"
                         android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/popular_products"
-                        android:layout_marginStart="9dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="@string/we_provide_best_products"
-                        android:textColor="@color/new_effected" />
 
                     <TextView
                         android:id="@+id/popular_see_all"
@@ -188,9 +170,9 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/nunito_regular"
+                        android:fontFamily="@font/roboto_flex"
                         android:text="See All"
-                        android:textColor="@color/new_green"
+                        android:textColor="@color/g_gray900"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </RelativeLayout>

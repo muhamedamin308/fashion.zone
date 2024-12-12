@@ -16,8 +16,8 @@ import android.widget.Toast;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.e_commerceapplication.R;
-import com.example.e_commerceapplication.database.DataLayer;
 import com.example.e_commerceapplication.classes.users.User;
+import com.example.e_commerceapplication.database.DataLayer;
 import com.example.e_commerceapplication.ui.activities.MainActivity;
 import com.google.firebase.database.DataSnapshot;
 
@@ -55,28 +55,28 @@ public class RatingDialogBar {
             HashMap<String, Object> map = new HashMap<>();
             dataLayer.getDatabaseReference().child(Objects.requireNonNull(dataLayer.getAuth().getUid()))
                     .get().addOnCompleteListener(task -> {
-               if (task.isSuccessful()) {
-                   for (DataSnapshot dataSnapshot : task.getResult().getChildren()) {
-                       User user = dataSnapshot.getValue(User.class);
-                       assert user != null;
-                       map.put("username", user.getUsername());
-                       map.put("email", user.getEmail());
-                       map.put("password", user.getPassword());
-                   }
-               }
-            });
+                        if (task.isSuccessful()) {
+                            for (DataSnapshot dataSnapshot: task.getResult().getChildren()) {
+                                User user = dataSnapshot.getValue(User.class);
+                                assert user != null;
+                                map.put("username", user.getUsername());
+                                map.put("email", user.getEmail());
+                                map.put("password", user.getPassword());
+                            }
+                        }
+                    });
             map.put("paymentRate", rateValue);
             dataLayer.getDatabaseReference().child(ADMIN_PATH).child(Objects.requireNonNull(dataLayer.getAuth().getUid())).updateChildren(map);
             dataLayer.getDatabaseReference().child(Objects.requireNonNull(dataLayer.getAuth().getUid())).updateChildren(map)
-                            .addOnCompleteListener(task -> {
-                                if (task.isSuccessful()){
-                                    dialog.dismiss();
-                                    activity.startActivity(new Intent(activity, MainActivity.class));
-                                    activity.finish();
-                                } else {
-                                    Toast.makeText(activity, "!!!", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            dialog.dismiss();
+                            activity.startActivity(new Intent(activity, MainActivity.class));
+                            activity.finish();
+                        } else {
+                            Toast.makeText(activity, "!!!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         });
 
     }

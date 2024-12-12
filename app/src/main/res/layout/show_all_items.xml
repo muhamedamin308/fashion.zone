@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="14dp"
-        android:padding="5dp">
+        android:padding="5dp"
+        app:cardCornerRadius="14dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/g_white900"
             android:gravity="center"
-            android:padding="15dp"
             android:orientation="vertical"
-            android:background="@drawable/all_items_bg">
+            android:padding="15dp">
 
             <ImageView
                 android:id="@+id/item_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="120dp"
                 app:srcCompat="@drawable/shopping_bags1" />
 
             <RelativeLayout
-                android:layout_marginTop="1dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="1dp"
                 android:gravity="center_horizontal">
 
 
@@ -36,22 +37,22 @@
                     android:id="@+id/product_showall_price"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_black"
+                    android:layout_toEndOf="@id/dollar_sign"
+                    android:fontFamily="@font/roboto_flex"
                     android:text="100.99"
+                    android:textColor="@color/black"
                     android:textSize="17sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/new_font_color"
-                    android:layout_toEndOf="@id/dollar_sign"/>
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/dollar_sign"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_regular"
+                    android:fontFamily="@font/roboto_flex"
                     android:text="@string/price"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"/>
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </RelativeLayout>
 
@@ -59,11 +60,11 @@
                 android:id="@+id/item_nam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="17sp"
+                android:fontFamily="@font/roboto_flex"
                 android:text="@string/we_provide_best_products"
-                android:textColor="@color/new_font_color"
-                android:fontFamily="@font/nunito_black"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/g_blue"
+                android:textSize="17sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

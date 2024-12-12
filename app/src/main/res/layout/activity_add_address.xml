@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.address.AddAddressActivity"
-    android:background="@color/new_bg">
+    android:background="@color/new_bg"
+    tools:context=".ui.address.AddAddressActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/detailed_top_bg"
-        android:orientation="vertical"
-        android:paddingTop="5dp">
+        android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:layout_marginHorizontal="10dp">
 
             <ImageView
                 android:id="@+id/exit"
@@ -28,95 +24,94 @@
                 android:layout_height="50dp"
                 android:padding="10dp"
                 android:src="@drawable/baseline_clear_24"
-                android:textColor="@color/white"
-                android:fontFamily="@font/nunito_black"
-                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="e" />
+                app:tint="@color/black" />
 
 
             <TextView
                 android:id="@+id/new_item_sign"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_black"
+                android:fontFamily="@font/roboto_flex"
+                android:gravity="center_vertical"
                 android:text="@string/add_address"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="19sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="54dp"
-                android:gravity="center_vertical"
-                app:layout_constraintStart_toEndOf="@id/exit"
-                app:layout_constraintTop_toTopOf="@id/exit"
                 app:layout_constraintBottom_toBottomOf="@id/exit"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/exit" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/new_green"
         android:id="@+id/getLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/g_dark_blue"
+        android:fontFamily="@font/roboto_flex"
+        android:paddingVertical="10dp"
         android:text="@string/get_location"
         android:textColor="@color/new_bg"
-        android:fontFamily="@font/nunito_black"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"/>
+        android:textStyle="bold" />
 
     <Button
-        android:visibility="gone"
+        android:id="@+id/confirmLocation"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:backgroundTint="@color/new_green"
-        android:id="@+id/confirmLocation"
+        android:layout_below="@id/getLocation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-90dp"
+        android:backgroundTint="@color/g_dark_blue"
+        android:fontFamily="@font/roboto_flex"
         android:text="@string/confirm_location"
         android:textColor="@color/new_bg"
-        android:fontFamily="@font/nunito_black"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/getLocation"
-        android:layout_marginTop="-90dp"/>
+        android:visibility="gone" />
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/address"
-        android:layout_marginTop="150dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/roboto_flex"
         android:text="@string/address"
+        android:textColor="@color/g_dark_blue"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/nunito_bold"
-        android:textColor="@color/white"/>
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/city"
-        android:layout_alignStart="@id/address"
-        android:layout_below="@+id/address"
-        android:text="@string/city"
-        android:textSize="25sp"
-        android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/nunito_bold"
-        android:textColor="@color/white"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/country"
+        android:layout_below="@+id/address"
         android:layout_alignStart="@id/address"
-        android:layout_below="@+id/city"
-        android:text="@string/country"
-        android:textSize="25sp"
         android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:fontFamily="@font/nunito_bold"
-        android:textColor="@color/white"/>
+        android:fontFamily="@font/roboto_flex"
+        android:text="@string/city"
+        android:textColor="@color/g_dark_blue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/city"
+        android:layout_alignStart="@id/address"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/roboto_flex"
+        android:text="@string/country"
+        android:textColor="@color/g_dark_blue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </RelativeLayout>

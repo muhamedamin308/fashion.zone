@@ -139,7 +139,7 @@ public class DetailedActivity extends AppCompatActivity {
             }
             break;
             case ALL: {
-                binding.newItemSign.setText(categories.get(((AllProducts) product).getType()));
+                binding.newItemSign.setText(categories.get(product.getType()));
                 binding.stockCounter.setVisibility(View.GONE);
             }
         }

@@ -4,6 +4,7 @@ import static com.example.e_commerceapplication.general.Constants.ADMIN_PATH;
 import static com.example.e_commerceapplication.general.Constants.USERS;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,9 +38,10 @@ public class UsersFeedbackActivity extends AppCompatActivity {
         DataLayer dataLayer = new DataLayer(USERS);
         dataLayer.getDatabaseReference().child(ADMIN_PATH).get().addOnCompleteListener(task -> {
             task.getResult().getChildren().forEach(child -> {
-                User s = child.getValue(User.class);
-                assert s != null;
-                dataEntries.add(new ValueDataEntry(s.getUsername(), s.getPaymentRate() * 10));
+                User user = child.getValue(User.class);
+                assert user != null;
+                Log.i("FashionLogging", user.getUsername());
+                dataEntries.add(new ValueDataEntry(user.getUsername(), user.getPaymentRate() * 10));
             });
             pie.data(dataEntries);
             binding.userData.setChart(pie);

@@ -74,6 +74,6 @@ public class OnBoardingActivity extends AppCompatActivity {
             binding.dots.addView(dots[i]);
             i++;
         }
-        if (dots.length > 0) dots[position].setTextColor(getResources().getColor(R.color.green));
+        if (dots.length > 0) dots[position].setTextColor(getResources().getColor(R.color.g_dark_blue));
     }
 }

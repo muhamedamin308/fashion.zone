@@ -10,8 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@color/new_bg"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,16 +22,13 @@
             android:id="@+id/welcome_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/top_background"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="10dp">
 
                 <ImageView
                     android:id="@+id/exit"
@@ -39,45 +36,41 @@
                     android:layout_height="50dp"
                     android:padding="10dp"
                     android:src="@drawable/baseline_clear_24"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/nunito_black"
-                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
 
 
                 <TextView
                     android:id="@+id/welcome_to"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_black"
+                    android:fontFamily="@font/roboto_flex"
+                    android:gravity="center_vertical"
                     android:padding="6dp"
                     android:text="@string/category_of"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="19sp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="54dp"
-                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/exit"
                     app:layout_constraintStart_toEndOf="@id/exit"
                     app:layout_constraintTop_toTopOf="@id/exit"
-                    app:layout_constraintBottom_toBottomOf="@id/exit"
-                    />
+                    tools:layout_editor_absoluteX="54dp" />
 
                 <TextView
                     android:id="@+id/category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_black"
-                    android:text="@string/hello"
-                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_flex"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/g_dark_blue"
                     android:textSize="21sp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="54dp"
-                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/welcome_to"
                     app:layout_constraintStart_toEndOf="@id/welcome_to"
                     app:layout_constraintTop_toTopOf="@id/welcome_to"
-                    app:layout_constraintBottom_toBottomOf="@id/welcome_to"
-                    />
+                    tools:layout_editor_absoluteX="54dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
@@ -85,10 +78,11 @@
             android:id="@+id/show_all_rec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/welcome_home"
-            tools:listitem="@layout/show_all_items"/>
+            tools:listitem="@layout/show_all_items" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

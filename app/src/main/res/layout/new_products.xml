@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="140dp"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
     android:padding="6dp"
-    android:layout_margin="10dp">
+    app:cardCornerRadius="10dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/new_item_bg">
+        android:background="@color/g_white900">
 
         <ImageView
+            android:id="@+id/new_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/new_img"
             android:layout_marginTop="7dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/empty_cart_3d"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -32,34 +31,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/new_error"
-            android:fontFamily="@font/nunito_black"
+            android:fontFamily="@font/roboto_flex"
             android:padding="6dp"
             android:text="@string/new_item"
             android:textColor="@color/white"
             android:textSize="13sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="54dp"
+            app:layout_constraintBottom_toBottomOf="@+id/new_img"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@+id/new_img"
             app:layout_constraintVertical_bias="0.1"
-            />
+            tools:layout_editor_absoluteX="54dp" />
 
         <TextView
             android:id="@+id/new_product_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
+            android:fontFamily="@font/roboto_flex"
             android:text="@string/product_name"
+            android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/new_img"
             tools:layout_editor_absoluteY="107dp" />
-        
-        
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,39 +68,36 @@
 
 
             <TextView
+                android:id="@+id/dollar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_regular"
-                app:layout_constraintHorizontal_bias="0"
-                android:textStyle="bold"
-                android:id="@+id/dollar"
+                android:fontFamily="@font/roboto_flex"
                 android:text="@string/price"
-                android:textColor="@color/new_green"
+                android:textColor="@color/black"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent" />
 
 
-
             <TextView
+                android:id="@+id/new_product_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_black"
-                app:layout_constraintHorizontal_bias="0"
-                android:textStyle="bold"
-                android:id="@+id/new_product_price"
+                android:fontFamily="@font/roboto_flex"
                 android:text="@string/_90"
-                android:textColor="@color/new_green"
+                android:textColor="@color/black"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/dollar"
+                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toEndOf="@id/dollar"
                 app:layout_constraintTop_toTopOf="@id/dollar" />
 
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

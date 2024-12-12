@@ -4,12 +4,11 @@ import com.example.e_commerceapplication.general.enums.ProductType;
 
 import java.io.Serializable;
 
-import kotlin.jvm.internal.SerializedIr;
 
 public class NewProduct extends Product implements Serializable {
+    public final ProductType productType = ProductType.NEW;
     String release;
     int stock;
-    public final ProductType productType = ProductType.NEW;
 
     public NewProduct(String image_url, String name, String description, double price, String rating, int stock) {
         this.image_url = image_url;

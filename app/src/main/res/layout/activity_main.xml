@@ -20,7 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/top_background"
+            android:background="@color/new_bg"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,21 +35,23 @@
                     android:id="@+id/page_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_black"
+                    android:fontFamily="@font/roboto_flex"
                     android:text="@string/home"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/search_products"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:src="@drawable/baseline_search_24"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
@@ -71,20 +73,30 @@
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottom_nav_bg"
-        app:menu="@menu/bottom_nav"
+        android:background="@color/new_bg"
+        app:itemActiveIndicatorStyle="@color/g_dark_blue"
+        app:itemIconTint="@drawable/bottom_nav_item_bg"
+        app:itemRippleColor="@color/g_blue"
+        app:itemTextColor="@drawable/bottom_nav_item_bg"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:menu="@menu/bottom_nav" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavAdmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bottom_nav_bg"
-        app:menu="@menu/admin_menu_bar"
+        android:background="@color/new_bg"
+        app:itemActiveIndicatorStyle="@color/g_dark_blue"
+        app:itemIconTint="@drawable/bottom_nav_item_bg"
+        app:itemRippleColor="@color/g_blue"
+        app:itemTextColor="@drawable/bottom_nav_item_bg"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:menu="@menu/admin_menu_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

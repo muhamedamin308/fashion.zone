@@ -17,7 +17,7 @@ import java.util.List;
 
 public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHolder> {
     private final List<Address> list;
-    SelectedAddress selectedAddress;
+    final SelectedAddress selectedAddress;
     private RadioButton selectedRadioButton;
 
 
@@ -57,8 +57,8 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView addressCity;
-        RadioButton addressSelected;
+        final TextView addressCity;
+        final RadioButton addressSelected;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             addressCity = itemView.findViewById(R.id.address_city);

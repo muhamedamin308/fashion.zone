@@ -4,27 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    android:padding="8dp">
+    android:padding="8dp"
+    app:cardCornerRadius="8dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_address"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/item_address"
-        android:background="@color/new_item_bg">
-
+        android:background="@color/g_white900">
 
 
         <TextView
             android:id="@+id/address_city"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="US California"
-            android:textColor="@color/white"
-            android:fontFamily="@font/nunito_bold"
-            android:textSize="16sp"
+            android:fontFamily="@font/roboto_flex"
             android:paddingStart="10dp"
+            android:text="US California"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,8 +32,8 @@
             android:id="@+id/select_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/g_dark_blue"
             android:gravity="center"
-            android:backgroundTint="@color/green"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1"

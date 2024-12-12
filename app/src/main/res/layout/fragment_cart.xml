@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,15 +8,15 @@
     tools:context=".ui.fragments.CartFragment">
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/empty_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/total_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/total_price">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -25,22 +24,22 @@
             android:layout_height="400dp"
             android:alpha="0.6"
             android:src="@drawable/empty_cart_3d"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Fashion cart is empty"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
-            app:layout_constraintStart_toStartOf="@id/imageView"
-            app:layout_constraintEnd_toEndOf="@id/imageView"
             android:layout_marginTop="10dp"
-            android:textColor="@color/new_green"
-            android:fontFamily="@font/nunito_semibold"
-            android:textSize="20sp"/>
+            android:fontFamily="@font/roboto_flex"
+            android:text="Your Fashion cart is empty"
+            android:textColor="@color/g_gray900"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/imageView"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -60,6 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
             android:layout_marginTop="10dp"
+            tools:itemCount="2"
             tools:listitem="@layout/my_cart_list_item" />
 
     </LinearLayout>
@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
-        android:background="@drawable/total_price_bg"
+        android:background="@drawable/search_bg"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         app:layout_constraintBottom_toTopOf="@+id/final_buy"
@@ -83,12 +83,12 @@
             android:id="@+id/tv_total_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:gravity="center_vertical"
             android:text="@string/total_price"
-            android:textColor="@color/new_green"
-            android:textSize="20sp"
-            android:layout_centerVertical="true"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
 
         <TextView
@@ -101,10 +101,10 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:fontFamily="@font/nunito_black"
+            android:fontFamily="@font/roboto_flex"
             android:gravity="center_vertical"
             android:text="@string/_0_0"
-            android:textColor="@color/new_font_color"
+            android:textColor="@color/black"
             android:textSize="22sp" />
 
 
@@ -119,7 +119,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="15dp"
-        android:fontFamily="@font/nunito_bold"
+        android:backgroundTint="@color/g_dark_blue"
+        android:fontFamily="@font/roboto_flex"
         android:text="@string/buy_now"
         android:textAllCaps="false"
         android:textColor="@color/new_bg"

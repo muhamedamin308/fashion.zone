@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide;
 import com.example.e_commerceapplication.R;
 import com.example.e_commerceapplication.classes.product.NewProduct;
 import com.example.e_commerceapplication.ui.admin.activities.AdminAddNewProductActivity;
-import com.example.e_commerceapplication.ui.products.DetailedActivity;
 
 import java.util.List;
 
@@ -55,9 +54,9 @@ public class AdminNewProductsAdapter extends RecyclerView.Adapter<AdminNewProduc
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView productName, productPrice;
-        ImageView productImage;
-        ConstraintLayout item;
+        final TextView productName, productPrice;
+        final ImageView productImage;
+        final ConstraintLayout item;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ECommerceApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/new_effected</item>
-        <item name="colorPrimaryDark">@color/new_effected</item>
+        <item name="colorPrimary">@color/g_dark_blue</item>
+        <item name="colorPrimaryDark">@color/g_dark_blue</item>
     </style>
 
     <style name="Theme.ECommerceApplication" parent="Base.Theme.ECommerceApplication" />

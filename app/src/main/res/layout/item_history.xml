@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="16dp"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    app:cardCornerRadius="16dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/history_cc_cl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/new_bg"
+        android:background="@color/g_white900"
         android:paddingStart="10dp">
 
         <TextView
             android:id="@+id/tv_product_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/roboto_flex"
             android:text="@string/original_polo"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,26 +32,27 @@
             android:id="@+id/tv_product_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
+            app:drawableTint="@color/g_dark_blue"
+            android:fontFamily="@font/roboto_flex"
             android:text="@string/_4_5"
             android:textAlignment="center"
-            android:textColor="@color/new_green"
+            android:textColor="@color/g_dark_blue"
             android:textSize="20sp"
             android:textStyle="bold"
             app:drawableEndCompat="@drawable/empty_star_rate"
             app:layout_constraintEnd_toEndOf="@+id/tv_product_name"
             app:layout_constraintStart_toStartOf="@+id/tv_product_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_name" />
-`
+
         <TextView
             android:id="@+id/tv_product_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
-            android:text="Quantity: 30"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:fontFamily="@font/roboto_flex"
             android:paddingBottom="20dp"
+            android:text="Quantity: 30"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/tv_product_price"
             app:layout_constraintStart_toStartOf="@+id/tv_product_price"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_price" />
@@ -63,23 +62,23 @@
             android:id="@+id/tv_product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_regular"
+            android:fontFamily="@font/roboto_flex"
             android:text="99$"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.79"
             app:layout_constraintStart_toEndOf="@+id/tv_product_name"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_black"
+            android:fontFamily="@font/roboto_flex"
             android:text="Muhamed Amin"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
